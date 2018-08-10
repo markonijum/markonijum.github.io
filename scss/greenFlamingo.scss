@@ -1,0 +1,48 @@
+@import "./colors";
+@import "./helpers";
+@media screen and (min-width: 992px) {
+  .white-fixed-menu {
+    .c-layout-header-7
+      .c-navbar
+      .c-mega-menu
+      .navbar-nav.c-theme-nav
+      li.c-active
+      > .c-link {
+      color: $button-color !important;
+    }
+    .c-layout-header.c-layout-header-7
+      .c-navbar
+      .c-mega-menu
+      > .nav.navbar-nav
+      > li
+      > .c-btn-icon,
+    .c-layout-header.c-layout-header-7
+      .c-navbar
+      .c-mega-menu
+      > .nav.navbar-nav
+      > li
+      > .c-link {
+      color: black;
+      &:hover {
+        color: $button-color !important;
+      }
+    }
+    &.c-page-on-scroll {
+      .c-layout-header.c-layout-header-7 {
+        background: rgb(245, 244, 244);
+      }
+      .c-layout-header-7
+        .c-navbar
+        .c-mega-menu
+        .navbar-nav.c-theme-nav
+        li.c-active
+        > .c-link {
+        color: $button-color !important;
+      }
+      // .c-layout-header.c-layout-header-7 .c-navbar .c-mega-menu>.nav.navbar-nav>li>.c-btn-icon,
+      // .c-layout-header.c-layout-header-7 .c-navbar .c-mega-menu>.nav.navbar-nav>li>.c-link {
+      //   color: white;
+      // }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  align-items: center;
+  &--column {
+    flex-direction: column;
+  }
+}
+.gf-size-sm {
+  padding: 30px 0;
+}
