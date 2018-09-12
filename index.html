@@ -40,6 +40,7 @@ Follow: http://www.twitter.com/themehats
 	<link href="assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 	<!-- END: BASE PLUGINS -->
 
 	<!-- BEGIN: PAGE STYLES -->
@@ -55,9 +56,96 @@ Follow: http://www.twitter.com/themehats
 	<!-- END THEME STYLES -->
 
 	<link rel="shortcut icon" href="favicon.ico" />
+
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="assets/js/flamingo.js"></script>
+	<style>
+		#animation_container {
+		position:absolute;
+		margin:auto;
+		/* left:0;right:0;
+		top:0;bottom:0; */
+		}
+	</style>
+	<script>
+			var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+			function init() {
+				canvas = document.getElementById("canvas");
+				anim_container = document.getElementById("animation_container");
+				dom_overlay_container = document.getElementById("dom_overlay_container");
+				var comp=AdobeAn.getComposition("97CEC889F55E2A46841E570E9A285AA4");
+				var lib=comp.getLibrary();
+				var loader = new createjs.LoadQueue(false);
+				loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+				loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+				var lib=comp.getLibrary();
+				loader.loadManifest(lib.properties.manifest);
+			}
+			function handleFileLoad(evt, comp) {
+				var images=comp.getImages();	
+				if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+			}
+			function handleComplete(evt,comp) {
+				//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+				var lib=comp.getLibrary();
+				var ss=comp.getSpriteSheet();
+				var queue = evt.target;
+				var ssMetadata = lib.ssMetadata;
+				for(i=0; i<ssMetadata.length; i++) {
+					ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+				}
+				exportRoot = new lib.flamingoNovi800x600_version2();
+				stage = new lib.Stage(canvas);	
+				//Registers the "tick" event listener.
+				fnStartAnimation = function() {
+					stage.addChild(exportRoot);
+					createjs.Ticker.setFPS(lib.properties.fps);
+					createjs.Ticker.addEventListener("tick", stage);
+				}	    
+				//Code to support hidpi screens and responsive scaling.
+				function makeResponsive(isResp, respDim, isScale, scaleType) {		
+					var lastW, lastH, lastS=1;		
+					window.addEventListener('resize', resizeCanvas);		
+					resizeCanvas();		
+					function resizeCanvas() {			
+						var w = lib.properties.width, h = lib.properties.height;			
+						var iw = window.innerWidth, ih=window.innerHeight;			
+						var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+						if(isResp) {                
+							if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+								sRatio = lastS;                
+							}				
+							else if(!isScale) {					
+								if(iw<w || ih<h)						
+									sRatio = Math.min(xRatio, yRatio);				
+							}				
+							else if(scaleType==1) {					
+								sRatio = Math.min(xRatio, yRatio);				
+							}				
+							else if(scaleType==2) {					
+								sRatio = Math.max(xRatio, yRatio);				
+							}			
+						}			
+						canvas.width = w*pRatio*sRatio;			
+						canvas.height = h*pRatio*sRatio;
+						canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+						canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+						stage.scaleX = pRatio*sRatio;			
+						stage.scaleY = pRatio*sRatio;			
+						lastW = iw; lastH = ih; lastS = sRatio;            
+						stage.tickOnUpdate = false;            
+						stage.update();            
+						stage.tickOnUpdate = true;		
+					}
+				}
+				makeResponsive(true,'both',false,1);	
+				AdobeAn.compositionLoaded(lib.properties.id);
+				fnStartAnimation();
+			}
+			</script>		
 </head>
 
-<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
+<body onload="init();" class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
 
 	<!-- BEGIN: LAYOUT/HEADERS/HEADER-3 -->
 	<!-- BEGIN: HEADER -->
@@ -68,9 +156,9 @@ Follow: http://www.twitter.com/themehats
 				<div class="c-navbar-wrapper clearfix">
 					<div class="c-brand c-pull-left">
 						<a href="index.html" class="c-logo">
-							<img src="assets/images/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo">
-							<img src="assets/images/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo-inverse">
-							<img src="assets/images/layout/logos/logo-1.png" alt="JANGO" class="c-mobile-logo">
+							<img src="assets/images/layout/logos/logo_main_1.png" alt="JANGO" class="c-desktop-logo">
+							<img src="assets/images/layout/logos/logo_main_1.png" alt="JANGO" class="c-desktop-logo-inverse">
+							<img src="assets/images/layout/logos/logo_main_1.png" alt="JANGO" class="c-mobile-logo">
 						</a>
 						<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
 							<span class="c-line"></span>
@@ -155,12 +243,10 @@ Follow: http://www.twitter.com/themehats
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
-							<div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
-					                   {"delay": "wait", "speed": 300, "to": "opacity: 0"}]' data-type="image" data-x="center" data-y="center"
-							  data-hoffset="0" data-voffset="0" data-width="['auto', 'auto', '728', '420']" data-height="['auto']" data-transform_in="x:0;y:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-							  data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-							  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000">
-								<img class="c-slider-15-title" src="assets/images/layout/sliders/revo-slider/slider-15/title.png" alt="">
+							<div id="animation_container" class="tp-caption tp-resizeme rs-parallaxlevel-10" data-type="image" data-x="center" data-y="center" style="background-color:transparent; width:800px; height:600px">
+								<canvas id="canvas" width="800" height="600" style="position: absolute; display: block; background-color:transparent;"></canvas>
+								<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
+								</div>
 							</div>
 
 							<!-- LAYER NR. 2 -->
@@ -170,18 +256,18 @@ Follow: http://www.twitter.com/themehats
 							  data-height="['auto']" data-transform_in="x:[-100%];y:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
 							  data-transform_out="x:[100%];y:[-100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
 							  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500">
-								<img src="assets/images/layout/sliders/revo-slider/slider-15/paper_plane.png" alt="">
+								<img src="assets/images/temp/h_logo_1.png" alt="">
 							</div>
 
 							<!-- LAYER NR. 3 -->
-							<div class="tp-caption tp-resizeme" data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
+							<!-- <div class="tp-caption tp-resizeme" data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
 					                   {"delay": "wait", "speed": 300, "to": "opacity: 0"}]' data-type="image" data-x="center" data-y="bottom"
 							  data-hoffset="0" data-voffset="['-10', '-10','-10','-5']" data-width="['auto', 'auto', '778', '480']" data-height="['auto', 'auto', 'auto', 'auto']"
 							  data-transform_in="x:0;y:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
 							  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="800"
 							  data-responsive_offset="on" data-basealign="slide">
 								<img class="c-slider-15-skyline" src="assets/images/layout/sliders/revo-slider/slider-15/skyline.png" alt="">
-							</div>
+							</div> -->
 						</li>
 						<!--END -->
 					</ul>
@@ -189,82 +275,127 @@ Follow: http://www.twitter.com/themehats
 			</div>
 		</section>
 		<!-- END: LAYOUT/SLIDERS/REVO-SLIDER-15 -->
-
-		<!-- BEGIN: CONTENT/MISC/SERVICES-6 -->
-		<div class="c-content-box c-size-md c-bg-white">
-			<div class="container">
-				<div class="c-content-services-6">
-					<div class="c-content-title-1 c-opt-1 wow fadeInUp">
-						<h3 class="c-center c-font-bold">Amazing Services</h3>
-						<p class="c-font-center">Getting it right the first time.</p>
-						<div class="c-line-center c-theme-bg"></div>
+		<!-- BEGIN: CONTENT/BARS/BAR-2 -->
+<div class="c-content-box c-size-md c-bg-grey-1 first-section-background">
+	<div class="container">
+		<div class="c-content-bar-2 c-opt-1">
+			<div class="row" data-auto-height="true">
+				<div class="col-md-6">
+					<!-- Begin: Title 1 component -->
+					<div class="c-content-title-1" data-height="height">
+						<h3 class="c-font-uppercase c-font-bold">Meet Green Flamingo</h3>
+						<p class="c-font-uppercase c-font-sbold">
+							Green Flamingo is an IT Business Solutions company that plans and executes projects to construct or revitalise brands and how they are presented online.  
+						</p>
+						<a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-md c-btn-border-2x c-btn-square c-theme-btn c-btn-uppercase c-btn-bold transparent-btn">More</a>
 					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="0s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-13"></div>
-								<h3 class="c-content-services-6-item-title">Feature Loaded</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="0.2s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-12"></div>
-								<h3 class="c-content-services-6-item-title">Future Proof</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="0.4s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-29"></div>
-								<h3 class="c-content-services-6-item-title">Countless Components</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="0.6s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-18"></div>
-								<h3 class="c-content-services-6-item-title">Endless Extension</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="0.8s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-24"></div>
-								<h3 class="c-content-services-6-item-title">Flexibility Freedom</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="c-content-services-6-item wow fadeInUp" data-wow-delay="1s">
-								<div class="c-content-services-6-item-icon c-content-business-line-icon c-theme c-business-icon-27"></div>
-								<h3 class="c-content-services-6-item-title">Ease of Use</h3>
-								<p class="c-content-services-6-item-desc">Lorem ipsum sit dolor eamet dolore adipiscing</p>
+					<!-- End-->
+				</div>
+				<div class="col-md-6">
+					<div class="c-content-v-center  first-section-right-background" data-height="height">
+						<div class="c-wrapper">
+							<div class="c-body">
+								<h3 class="c-font-white c-font-bold">Transforming your vision into a result</h3>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- END: CONTENT/MISC/SERVICES-6 -->
+	</div> 
+</div>
+<!-- END: CONTENT/BARS/BAR-2 -->
+
+	<!-- BEGIN: CONTENT/MISC/SERVICES-3 -->
+	<div class="c-content-box c-size-md c-bg-white">
+		<div class="container">
+			<div class="c-content-feature-2-grid">
+				<div class="c-content-title-1">
+					<h3 class="c-font-uppercase c-center c-font-bold">Services We Do</h3>
+					<div class="c-line-center"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">
+							<div class="c-icon-wrapper c-theme-bg-on-parent-hover">
+								<div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
+							</div>
+							<h3 class="c-font-uppercase c-title">Web Design</h3>
+							<p>Lorem ipsum sit dolor eamet dolore adipiscing</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">
+							<div class="c-icon-wrapper c-theme-bg-on-parent-hover">
+								<div class="c-content-line-icon c-theme c-icon-support"></div>
+							</div>
+							<h3 class="c-font-uppercase c-title">Mobile Apps</h3>
+							<p>Lorem ipsum sit dolor eamet dolore adipiscing</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">
+							<div class="c-icon-wrapper c-theme-bg-on-parent-hover">
+								<div class="c-content-line-icon c-theme c-icon-comment"></div>
+							</div>
+							<h3 class="c-font-uppercase c-title">Consulting</h3>
+							<p>Lorem ipsum sit dolor eamet dolore adipiscing</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">
+							<div class="c-icon-wrapper c-theme-bg-on-parent-hover">
+								<div class="c-content-line-icon c-theme c-icon-bulb"></div>
+							</div>
+							<h3 class="c-font-uppercase c-title">Campaigns</h3>
+							<p>Lorem ipsum sit dolor eamet dolore adipiscing</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-v-center c-theme-bg wow bounceInUp services-feature-background" data-wow-delay1="2s" data-height="height">
+							<div class="c-wrapper">
+								<div class="c-body c-padding-20 c-center">  
+									<h3 class="c-font-19 c-line-height-28 c-font-uppercase c-font-white c-font-bold">
+										We cover a variety of services, completely tailored to your business needs, 
+										reflecting your vision for your brand.
+									</h3>
+									<a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-xs c-btn-border-2x c-btn-square c-theme-btn c-btn-uppercase c-btn-bold green">Explore</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">
+							<div class="c-icon-wrapper c-theme-bg-on-parent-hover">
+								<div class="c-content-line-icon c-theme c-icon-globe"></div>
+							</div>
+							<h3 class="c-font-uppercase c-title">Hosting</h3>
+							<p>Lorem ipsum sit dolor eamet dolore adipiscing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div><!-- END: CONTENT/MISC/SERVICES-3 -->
+		
 
 		<section id="aboutus">
 			<!-- BEGIN: CONTENT/MISC/WHY-CHOOSE-US-1 -->
-			<div class="c-content-box c-size-lg c-bg-grey-1">
+			<div class="c-content-box c-size-lg c-bg-grey-1 concept-section-background">
 				<div class="container">
 					<div class="">
 						<div class="row">
 							<div class="col-md-7">
 								<div class="c-content-feature-5">
 									<div class="c-content-title-1 wow amimate fadeInDown">
-										<h3 class="c-left c-font-dark c-font-uppercase c-font-bold">Why
-											<br/>JANGO ?</h3>
+										<h3 class="c-left c-font-dark c-font-uppercase c-font-bold">The Core
+											<br/>CONCEPT</h3>
 										<div class="c-line-left c-bg-blue-3 c-theme-bg"></div>
 									</div>
-									<div class="c-text wow animate fadeInLeft">
-										JANGO is the ultimate tool to power any of your projects. Corporate, ecommerce, SAAS, CRM and much more.
+									<div class="c-text wow animate fadeInLeft concept-box-left">
+										With right ingredients, the recipe never fails. 
 									</div>
-									<a href="aboutus.html" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn wow animate fadeIn">Explore</a>
+									<a href="aboutus.html" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn wow animate fadeIn concept-btn">Explore</a>
 									<img class="c-photo img-responsive wow animate fadeInUp" width="420" alt="" src="assets/images/content/misc/jango-intro-2.jpg"
 									/>
 								</div>
@@ -275,16 +406,15 @@ Follow: http://www.twitter.com/themehats
 										<div class="panel">
 											<div class="panel-heading" role="tab" id="headingOne">
 												<h4 class="panel-title">
-													<a class="c-font-bold c-font-uppercase c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+													<a class="c-font-bold c-font-uppercase c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"
 													  aria-controls="collapseOne">
-														Exceptional Frontend Framework
+													  Visual communication
 													</a>
 												</h4>
 											</div>
 											<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 												<div class="panel-body c-font-18">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-													Ut enim ad minim veniam.
+													Creating visual communication between the brand and its desired target market, aiming to establish loyalty in a structured way throughout all sectors. Maintaining unique and evocative branding of your company formulates visual personality and builds towards a full-rounded brand. The foundation of the visual communication is the consistency conducted through online and offline outreach campaigns.
 												</div>
 											</div>
 										</div>
@@ -292,15 +422,14 @@ Follow: http://www.twitter.com/themehats
 											<div class="panel-heading" role="tab" id="headingTwo">
 												<h4 class="panel-title">
 													<a class="collapsed c-font-uppercase c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-													  aria-expanded="false" aria-controls="collapseTwo">
-														Modern Design Trends
+													  aria-expanded="true" aria-controls="collapseTwo">
+													  Marketing Strategy
 													</a>
 												</h4>
 											</div>
 											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 												<div class="panel-body c-font-18">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-													Ut enim ad minim veniam.
+													Base for building an effective strategy is hidden in the uniqueness of the client’s strength related to its’ customer profile. We focus on maximising company’s potential and capturing the attention of the target market by implementing our set of solutions making your goals our priority. Our approach to each client is tailored and highly targeted. Hence, monitoring of results represents a very important element that provides basis for continuous improvement, making our collaborative work a learning curve.
 												</div>
 											</div>
 										</div>
@@ -309,14 +438,13 @@ Follow: http://www.twitter.com/themehats
 												<h4 class="panel-title">
 													<a class="collapsed c-font-uppercase c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
 													  aria-expanded="false" aria-controls="collapseThree">
-														Beatifully Crafted Code
+													  The Code
 													</a>
 												</h4>
 											</div>
 											<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 												<div class="panel-body c-font-18">
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-													Ut enim ad minim veniam.
+													Providing adequate technical development of scalable solutions with a strong baseline from the start, having in mind client’s future needs as well. Respective organized timeline, and frequent and clear communication are crucial towards realizing the potential of collaboration. Requirements identification is the starting point which results in obtaining beforehand agreed expectations and avoiding re-work.
 												</div>
 											</div>
 										</div>
@@ -330,353 +458,281 @@ Follow: http://www.twitter.com/themehats
 			<!-- END: CONTENT/MISC/WHY-CHOOSE-US-1 -->
 		</section>
 
-		<!-- BEGIN: CONTENT/TABS/TAB-1 -->
-		<div class="c-content-box c-size-md c-no-bottom-padding c-overflow-hide">
-			<div class="c-container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="c-content-title-1">
-							<h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30">
-								JANGO'S Main Features
-							</h3>
-							<div class="c-line-center c-theme-bg"></div>
-						</div>
+		<!-- BEGIN: CONTENT/BARS/BAR-3 -->
+<div class="c-content-box c-size-md first-section-right-background">
+	<div class="container">
+		<div class="c-content-bar-3">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="c-content-title-1">
+						<h3 class="c-font-uppercase c-font-bold">How we do it IS what makes us special</h3>
+					
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="c-content-tab-2 c-theme c-opt-1">
-							<ul class="nav c-tab-icon-stack c-font-sbold c-font-uppercase">
-								<li class="active">
-									<a href="#c-tab2-opt1-1" data-toggle="tab">
-										<span class="c-content-line-icon c-icon-25"></span>
-										<span class="c-title">Design</span>
-									</a>
-									<div class="c-arrow"></div>
-								</li>
-								<li>
-									<a href="#c-tab2-opt1-2" data-toggle="tab">
-										<span class="c-content-line-icon c-icon-19"></span>
-										<span class="c-title">Responsive</span>
-									</a>
-									<div class="c-arrow"></div>
-								</li>
-								<li>
-									<a href="#c-tab2-opt1-3" data-toggle="tab">
-										<span class="c-content-line-icon c-icon-14"></span>
-										<span class="c-title">Support</span>
-									</a>
-									<div class="c-arrow"></div>
-								</li>
-								<li>
-									<a href="#c-tab2-opt1-4" data-toggle="tab">
-										<span class="c-content-line-icon c-icon-20"></span>
-										<span class="c-title">Flexible</span>
-									</a>
-									<div class="c-arrow"></div>
-								</li>
-								<li>
-									<a href="#c-tab2-opt1-5" data-toggle="tab">
-										<span class="c-content-line-icon c-icon-33"></span>
-										<span class="c-title">Structured</span>
-									</a>
-									<div class="c-arrow"></div>
-								</li>
-							</ul>
-							<div class="c-tab-content">
-								<div class="c-bg-img-center1" style="background-image: url(assets/images/content/backgrounds/bg-62.jpg)">
-									<div class="container">
-										<div class="tab-content">
-											<div class="tab-pane fade in active" id="c-tab2-opt1-1">
-												<div class="c-tab-pane">
-													<img class="img-responsive" src="assets/images/content/stock2/3.jpg" alt="" />
-
-													<h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Modern Design Trends</h4>
-
-													<p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-														aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit
-														ad minim veniam, exerci tation suscipit lobortis nisl ut aliquip ex ea commodo consequat exerci tation suscipit
-														lobortis nisl ut laoreet dolore magna aliquam ut aliquip ex ea commodo consequat.
-													</p>
-
-													<button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
-														EXPLORE
-													</button>
-												</div>
-											</div>
-											<div class="tab-pane fade" id="c-tab2-opt1-2">
-												<div class="c-tab-pane">
-													<img class="img-responsive" src="assets/images/content/stock2/04.jpg" alt="" />
-
-													<h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Optimzied For All Screen Sizes & Types</h4>
-
-													<p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-														aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit lobortis nisl ut aliquip ex ea
-														commodo consequat exerci tation suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-													</p>
-													<button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
-														EXPLORE
-													</button>
-												</div>
-											</div>
-											<div class="tab-pane fade" id="c-tab2-opt1-3">
-												<div class="c-tab-pane">
-													<img class="img-responsive" src="assets/images/content/stock2/5.jpg" alt="" />
-
-													<h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Dedicated Support To All Customers</h4>
-
-													<p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-														aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit enim ad minim veniam lobortis nisl
-														ut aliquip ex ea commodo consequat exerci tation suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-													</p>
-													<button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
-														EXPLORE
-													</button>
-												</div>
-											</div>
-											<div class="tab-pane fade" id="c-tab2-opt1-4">
-												<div class="c-tab-pane">
-													<img class="img-responsive" src="assets/images/content/stock2/06.jpg" alt="" />
-
-													<h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Coded By Developers For Developers</h4>
-
-													<p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed enim ad minim veniam diam nonummy nibh euismod tincidunt ut
-														enim ad minim veniam laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation
-														suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-													</p>
-													<button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
-														EXPLORE
-													</button>
-												</div>
-											</div>
-											<div class="tab-pane fade" id="c-tab2-opt1-5">
-												<div class="c-tab-pane">
-													<img class="img-responsive" src="assets/images/content/stock2/6.jpg" alt="" />
-
-													<h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">Unlimited Flexible Multi-purpose Layouts & Components</h4>
-
-													<p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
-														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed enim ad minim veniam diam nonummy nibh euismod tincidunt ut
-														laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit lobortis nisl
-														ut aliquip ex ea commodo consequat enim ad minim veniam.
-													</p>
-													<button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
-														EXPLORE
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+				<!--<div class="col-md-3 col-md-offset-2">
+					<div class="c-content-v-center" style="height: 90px;">
+						<div class="c-wrapper">
+							<div class="c-body">
+								<button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-theme-btn c-btn-uppercase c-btn-bold">Get Support</button>
 							</div>
 						</div>
-					</div>
-				</div>
-
+					</div>					
+				</div> -->
 			</div>
 		</div>
-		<!-- END: CONTENT/TABS/TAB-1 -->
-
-		<section id="serviceswedo">
-			<!-- BEGIN: CONTENT/TILES/TILE-3 -->
-			<div class="c-content-box c-size-md c-bg-white">
-				<div class="c-content-tile-grid c-bs-grid-reset-space" data-auto-height="true">
-					<div class="c-content-title-1 wow animate fadeInDown">
-						<h3 class="c-font-uppercase c-center c-font-bold">Services We Do</h3>
-						<div class="c-line-center"></div>
+	</div> 
+</div>
+<!-- END: CONTENT/BARS/BAR-3 -->
+<!-- BEGIN: CONTENT/FEATURES/FEATURES-11 -->
+<div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(assets/images/temp/value_bg2.png)">
+	<div class="container">
+		<div class="c-content-feature-8 c-opt-1">
+			<ul class="c-grid">
+				<li>
+					<div class="c-card c-font-right c-bg-opacity-1">
+						<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Why Us</h3>
+						<p class="c-font-white c-font-18">
+							Today’s markets are becoming increasingly competitive; and the arena for this competition is more digital than ever before. As such, IT consultancies are also evolving, adopting newer, faster, and more efficient logic of integrated management that deliver quality at a cheaper price. 
+						</p>
 					</div>
-					<div class="row wow animate fadeInUp">
-						<div class="col-md-6">
-							<div class="c-content-tile-1 c-bg-green">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="c-tile-content c-content-v-center" data-height="height">
-											<div class="c-wrapper">
-												<div class="c-body c-center">
-													<h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
-														Nothing is impossible for JANGO. Highly Flexible, always growing
-													</h3>
-													<a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">More</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="c-tile-content c-arrow-right c-arrow-green c-content-overlay">
-											<div class="c-overlay-wrapper">
-												<div class="c-overlay-content">
-													<a href="#">
-														<i class="icon-link"></i>
-													</a>
-													<a href="assets/images/content/stock/79.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
-														<i class="icon-magnifier"></i>
-													</a>
-												</div>
-											</div>
-											<div class="c-image c-overlay-object" data-height="height" style="background-image: url(assets/images/content/stock/79.jpg)"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="c-content-tile-1 c-bg-brown-2">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="c-tile-content c-content-v-center" data-height="height">
-											<div class="c-wrapper">
-												<div class="c-body c-center">
-													<h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
-														Web Design
-													</h3>
-													<p class="c-tile-body c-font-white">Lorem ipsum consectetuer elit sit amet, sit adipiscing amet, coectetuer adipiscing elit sit ame.</p>
-													<a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">More</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="c-tile-content c-arrow-right c-arrow-brown-2 c-content-overlay">
-											<div class="c-overlay-wrapper">
-												<div class="c-overlay-content">
-													<a href="#">
-														<i class="icon-link"></i>
-													</a>
-													<a href="assets/images/content/stock/90.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
-														<i class="icon-magnifier"></i>
-													</a>
-												</div>
-											</div>
-											<div class="c-image c-overlay-object" data-height="height" style="background-image: url(assets/images/content/stock/90.jpg)"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="c-content-tile-1 c-bg-red-2">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="c-tile-content c-arrow-left c-arrow-red-2 c-content-overlay">
-											<div class="c-overlay-wrapper">
-												<div class="c-overlay-content">
-													<a href="#">
-														<i class="icon-link"></i>
-													</a>
-													<a href="assets/images/content/stock/41.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
-														<i class="icon-magnifier"></i>
-													</a>
-												</div>
-											</div>
-											<div class="c-image c-overlay-object" data-height="height" style="background-image: url(assets/images/content/stock/41.jpg)"></div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="c-tile-content c-content-v-center" data-height="height">
-											<div class="c-wrapper">
-												<div class="c-body c-center">
-													<h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
-														LEARN MORE ABOUT JANGO
-													</h3>
-													<a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">More</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="c-content-tile-1 c-bg-blue-3">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="c-tile-content c-arrow-left c-arrow-blue-3 c-content-overlay">
-											<div class="c-overlay-wrapper">
-												<div class="c-overlay-content">
-													<a href="#">
-														<i class="icon-link"></i>
-													</a>
-													<a href="assets/images/content/stock/78.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
-														<i class="icon-magnifier"></i>
-													</a>
-												</div>
-											</div>
-											<div class="c-image c-overlay-object" data-height="height" style="background-image: url(assets/images/content/stock/78.jpg)"></div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="c-tile-content c-content-v-center" data-height="height">
-											<div class="c-wrapper">
-												<div class="c-body c-center">
-													<h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
-														The Future
-													</h3>
-													<p class="c-tile-body c-font-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt.</p>
-													<a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">More</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+				</li>
+				<li>
+					<div class="c-card c-font-right c-bg-opacity-1">
+						<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">How Do We Do it</h3>
+						<p class="c-font-white c-font-18">
+							We work on “project” basis, where the end of each product is a pre-agreed and clear set of outcomes regarding sales, online visibility, and client outreach. We plan the projects with you, allowing you to remain involved in your brand’s story and how it is presented to your clients.
+						</p>
 					</div>
-				</div>
-			</div>
-			<!-- END: CONTENT/TILES/TILE-3 -->
-			<div class="c-content-box flex flex--column gf-size-sm">
-				<a href="#" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn wow animate fadeIn">View More</a>
-			</div>
-		</section>
-
-		<!-- BEGIN: CONTENT/FEATURES/FEATURES-11 -->
-		<div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(assets/images/content/backgrounds/bg-51.jpg)">
-			<div class="container">
-				<div class="c-content-feature-8 c-opt-1">
-					<ul class="c-grid">
-						<li>
-							<div class="c-card c-font-right c-bg-opacity-1">
-								<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Great
-									<br/>Customer Care</h3>
-								<p class="c-font-white c-font-18">
-									Lorem ipsum euismod dolor amet consetuer adipiscing elit sed diam nonummy euismod dolore
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="c-card c-bg-opacity-1">
-								<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Awesome
-									<br/>Features Pack</h3>
-								<p class="c-font-white c-font-18">
-									Lorem ipsum euismod dolor amet consetuer adipiscing elit sed diam nonummy euismod dolore
-								</p>
-							</div>
-						</li>
-					</ul>
-					<ul class="c-grid">
-						<li>
-							<div class="c-card c-font-right c-bg-opacity-1">
-								<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Unlimited
-									<br/>Themed Layouts</h3>
-								<p class="c-font-white c-font-18">
-									Lorem ipsum euismod dolor amet consetuer adipiscing elit sed diam nonummy euismod dolore
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="c-card c-img c-bg-img-center" style="background-image: url(assets/images/content/stock3/6.jpg)">
-								<h3 class="c-font-white c-font-50 c-font-center">&nbsp;</h3>
-							</div>
-						</li>
-					</ul>
+				</li>
+			</ul>
+			<ul class="c-grid">
+				<li>
+					<div class="c-card c-font-right c-bg-opacity-1">
+						<p class="c-font-white c-font-18">
+							Green Flamingo aims to greet and lead this change by adopting a “projectized” approach in the planning and execution of all contracts, conferring the below benefits. Furthermore, building lasting client relationships instead of focusing on one-time transactional work will allow for the maintenance and sustainability of brand image, ensuring continued relevance and competitiveness beyond the project end date.
+						</p>
+						
+					</div>
+				</li>
+				<li>
+					<div class="c-card c-img c-bg-img-center" style="background-image: url(assets/images/content/stock3/6.jpg)">
+						<h3 class="c-font-white c-font-50 c-font-center">&nbsp;</h3>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- END: CONTENT/FEATURES/FEATURES-11 -->
+	
+<!-- BEGIN: CONTENT/STEPS/STEPS-1 -->
+<div class="c-content-box c-size-md c-bg-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="c-content-title-1 c-margin-b-60">
+					<h3 class="c-center c-font-uppercase c-font-bold">
+						How We Optimize Your Business
+					</h3>					
+					<div class="c-line-center"></div>
+					<p class="c-center c-font-uppercase c-font-17">
+						What can Green Flamingo do for you?
+					</p>
 				</div>
 			</div>
 		</div>
-		<!-- END: CONTENT/FEATURES/FEATURES-11 -->
+
+		<div class="row">
+			<div class="col-md-4 col-sm-6 wow animate fadeInLeft">
+				<div class="c-content-step-1 c-opt-1">
+					<div class="c-icon"><span class="c-hr c-hr-first"><span class="c-content-line-icon c-icon-14 c-theme"></span></span></div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Build</div>
+					<div class="c-description c-font-17">
+						Create your digital presence and company brand from scratch
+					</div>
+					<button class="btn c-btn-square c-theme-btn c-btn-border1-2x c-btn-uppercase c-btn-bold">EXPLORE</button>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow animate fadeInLeft" data-wow-delay="0.2s">
+				<div class="c-content-step-1 c-opt-1">
+					<div class="c-icon"><span class="c-hr"><span class="c-content-line-icon c-icon-21 c-theme"></span></span></div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Boost</div>
+					<div class="c-description c-font-17">
+						Take your company to the next level, by upgrading your current assets
+					</div>
+					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 wow animate fadeInLeft" data-wow-delay="0.4s">
+				<div class="c-content-step-1 c-opt-1">
+					<div class="c-icon"><span class="c-hr c-hr-last"><span class="c-content-line-icon c-icon-32 c-theme"></span></span></div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Maintain</div>
+					<div class="c-description c-font-17">
+						Invest your trust in us to effectively manage your current assets
+					</div>
+					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- END: CONTENT/STEPS/STEPS-1 -->
+<!-- BEGIN: CONTENT/FEATURES/FEATURES-2 -->
+<div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(../../assets/images/content/backgrounds/bg_oswald_1.jpg)">
+	<div class="container">
+		<div class="c-content-feature-3-grid">
+			<h3 class="c-title c-font-uppercase c-font-bold">Wondering what<br/>to do next?</h3>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="c-content-feature-3">
+						
+						<p>The questionaire can help you with your idea, we promise that we will get back to you in the next 24h</p>
+						<button type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Start</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="c-content-feature-3">
+						<p>We respect your privacy, any data you share is strictly confidential</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="c-content-feature-3">
+						<p>Feel free to contact us and the Green Flamingo will get back with you shortly with your answer</p>
+						<button type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Contact</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+<!-- END: CONTENT/FEATURES/FEATURES-2 -->
+	<!-- BEGIN: CONTENT/PORTFOLIO/LATEST-WORKS-2 -->
+<div class="c-content-box c-size-md c-bg-grey-1">
+	<div class="container">
+			<div class="c-content-title-1">
+				<h3 class="c-center c-font-uppercase c-font-bold">Latest Portfolio</h3>
+				<div class="c-line-center c-theme-bg"></div>
+				<p class="c-center c-font-uppercase">Showcasing your latest designs, sketches, photographs or videos.</p>
+			</div>			
+			<div class="cbp-panel">
+				<!-- SEE: components.js:ContentCubeLatestPortfolio -->
+		        <div class="c-content-latest-works cbp cbp-l-grid-masonry-projects">
+		            <div class="cbp-item graphic wow animate fadeInLeft">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/08-long_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project1.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/08_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="Dashboard<br>by Paul Flavius Nechita">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item web-design logos wow animate fadeInLeft" data-wow-delay="0.2s">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/07_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project2.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/07_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="World Clock Widget<br>by Paul Flavius Nechita">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item graphic logos wow animate fadeInLeft" data-wow-delay="0.4s">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/09_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project3.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="http://vimeo.com/14912890" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="To-Do Dashboard<br>by Tiberiu Neamu">view video</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item identity web-design wow animate fadeInLeft" data-wow-delay="0.6s">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/014_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project4.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/014_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="WhereTO App<br>by Tiberiu Neamu">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item web-design graphic wow animate fadeInLeft">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/34_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project5.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/34_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="Events and  More<br>by Tiberiu Neamu">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item identity web-design wow animate fadeInLeft" data-wow-delay="0.2s">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/53_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project6.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/53_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="Ski * Buddy<br>by Tiberiu Neamu">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="cbp-item graphic logos wow animate fadeInLeft" data-wow-delay="0.4s">
+		                <div class="cbp-caption">
+		                    <div class="cbp-caption-defaultWrap">
+		                        <img src="../../assets/base/img/content/stock/39_grey.jpg" alt="">
+		                    </div>
+		                    <div class="cbp-caption-activeWrap">
+		                    	<div class="c-masonry-border"></div>
+		                        <div class="cbp-l-caption-alignCenter">
+		                            <div class="cbp-l-caption-body">
+		                                <a href="ajax/projects/project7.html" class="cbp-singlePage cbp-l-caption-buttonLeft btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase">explore</a>
+		                                <a href="../../assets/base/img/content/stock/39_grey.jpg" class="cbp-lightbox cbp-l-caption-buttonRight btn c-btn-square c-btn-border-1x c-btn-white c-btn-bold c-btn-uppercase" data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">zoom</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	</div> 
+</div><!-- END: CONTENT/PORTFOLIO/LATEST-WORKS-2 -->
+		
 
 		<section id="recentblogs">
 			<!-- BEGIN: CONTENT/BLOG/RECENT-POSTS -->

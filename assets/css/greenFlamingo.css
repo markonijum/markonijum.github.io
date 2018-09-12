@@ -68,3 +68,54 @@ li.c-active
   }
 }
 /*# sourceMappingURL=greenFlamingo.css.map */
+
+
+/* NEW CUSTOM STYLES FOR INTEGRATION WITH COMPONENTS */
+/*First section*/
+.first-section-background {
+  background-color: white  !important;
+}
+/*right side box */
+.first-section-right-background {
+  background-color: #8cc63f  ;
+}
+.first-section-background .transparent-btn {
+  border-color : #60b3f6 !important; 
+  color : #60b3f6 !important;
+}
+.first-section-background .tansparent-btn:hover {
+  background-color : #60b3f6 !important;
+  border-color : #60b3f6 !important; 
+  color : white !important;
+}
+/*Services section */
+.services-section-background {
+  background-color: #F7FBF4
+  !important;
+}
+.services-feature-background {
+  background-color: #60b3f6 !important; 
+}
+.services-feature-background a {
+  border-color : white !important;
+  color : white !important;
+}
+/*Concept section*/
+
+/*Right accordion*/
+.c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:hover, .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:focus{
+  background-color: #60b3f6 !important; 
+}
+.c-content-accordion-1.c-theme .panel > .panel-collapse > .panel-body{
+  background-color: #60b3f6 !important; 
+}
+.concept-box-left {
+  background-color: #8cc63f !important;
+  color : white !important;
+  font-weight: bold !important;
+} 
+.concept-btn {
+  background-color: #60b3f6 ;
+  border-color : #60b3f6 ;
+
+}
