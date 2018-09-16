@@ -57,12 +57,6 @@ p.nominalBounds = new cjs.Rectangle(0,0,2501,2501);
 p.nominalBounds = new cjs.Rectangle(0,0,2500,2501);
 
 
-(lib.Flamingologo44 = function() {
-	this.initialize(img.Flamingologo44);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,2501,2501);
-
-
 (lib.Flamingologo45 = function() {
 	this.initialize(img.Flamingologo45);
 }).prototype = p = new cjs.Bitmap();
@@ -259,6 +253,26 @@ p.nominalBounds = new cjs.Rectangle(0,0,301,300);
 	this.initialize(img.Flamingologo84);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,301,300);
+
+
+(lib.Flamingologo85 = function() {
+	this.initialize(img.Flamingologo85);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,301,300);
+
+
+(lib.Tween145 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.Flamingologo85();
+	this.instance.parent = this;
+	this.instance.setTransform(-79.7,-79.5,0.53,0.53);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-79.7,-79.5,159.6,159);
 
 
 (lib.Tween143 = function(mode,startPosition,loop) {
@@ -1143,20 +1157,6 @@ p.nominalBounds = new cjs.Rectangle(-150,-150,300,300);
 p.nominalBounds = new cjs.Rectangle(-150,-150,300,300);
 
 
-(lib.Tween12 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Layer_1
-	this.instance = new lib.Flamingologo44();
-	this.instance.parent = this;
-	this.instance.setTransform(-150,-150,0.12,0.12);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-150,-150,300,300);
-
-
 (lib.Tween10 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -1209,7 +1209,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance.setTransform(386.1,110,1,1,0,90,0);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(4).to({_off:false},0).to({scaleX:2,scaleY:2,skewX:0},13).wait(134).to({startPosition:0},0).to({scaleX:1,scaleY:1},28).wait(17).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(8).to({_off:false},0).to({scaleX:2,scaleY:2,skewX:0},13).wait(180).to({startPosition:0},0).to({scaleX:1,scaleY:1},28).wait(17).to({startPosition:0},0).wait(1));
 
 	// cloud3
 	this.instance_1 = new lib.Tween41("synched",0);
@@ -1225,8 +1225,8 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(309,-57,0.12,0.12);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_1}]},82).to({state:[{t:this.instance_2}]},62).to({state:[{t:this.instance_3}]},52).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(82).to({_off:false},0).to({_off:true,x:459,y:93},62).wait(53));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_1}]},132).to({state:[{t:this.instance_2}]},62).to({state:[{t:this.instance_3}]},52).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(132).to({_off:false},0).to({_off:true,x:459,y:93},62).wait(53));
 
 	// cloud2
 	this.instance_4 = new lib.Tween39("synched",0);
@@ -1238,8 +1238,8 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_5.parent = this;
 	this.instance_5.setTransform(507,123.1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_4}]},77).to({state:[{t:this.instance_5}]},63).to({state:[{t:this.instance_5}]},56).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(77).to({_off:false},0).to({_off:true,x:507,y:123.1},63).wait(57));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_4}]},127).to({state:[{t:this.instance_5}]},63).to({state:[{t:this.instance_5}]},56).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(127).to({_off:false},0).to({_off:true,x:507,y:123.1},63).wait(57));
 
 	// cloud1
 	this.instance_6 = new lib.Tween37("synched",0);
@@ -1255,8 +1255,8 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_8.parent = this;
 	this.instance_8.setTransform(114,-40,0.12,0.12);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_6}]},72).to({state:[{t:this.instance_7}]},65).to({state:[{t:this.instance_8}]},59).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(72).to({_off:false},0).to({_off:true,x:264,y:110},65).wait(60));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_6}]},122).to({state:[{t:this.instance_7}]},65).to({state:[{t:this.instance_8}]},59).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(122).to({_off:false},0).to({_off:true,x:264,y:110},65).wait(60));
 
 	// flamingo
 	this.instance_9 = new lib.Tween8("synched",0);
@@ -1264,7 +1264,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_9.setTransform(399.1,340,0.286,0.285,0,0,0,0.1,0);
 	this.instance_9._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_9).wait(64).to({_off:false},0).to({regX:0,scaleX:1,scaleY:1,x:397.1,y:312},28).wait(104).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_9).wait(172).to({_off:false},0).to({regX:0,scaleX:1,scaleY:1,x:397.1,y:312},28).wait(46).to({startPosition:0},0).wait(1));
 
 	// palma3
 	this.instance_10 = new lib.Tween10("synched",0);
@@ -1272,7 +1272,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_10.setTransform(238.1,308,0.067,0.067,0,0,0,0.8,0.8);
 	this.instance_10._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(62).to({_off:false},0).to({regX:0,regY:0,scaleX:1,scaleY:1,x:252,y:263.1},28).wait(106).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(112).to({_off:false},0).to({regX:0,regY:0,scaleX:1,scaleY:1,x:252,y:263.1},28).wait(106).to({startPosition:0},0).wait(1));
 
 	// palma2
 	this.instance_11 = new lib.Tween4("synched",0);
@@ -1280,540 +1280,549 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.instance_11.setTransform(510.1,259,0.067,0.067);
 	this.instance_11._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(67).to({_off:false},0).to({scaleX:1,scaleY:1,x:520.1,y:205},28).wait(101).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(117).to({_off:false},0).to({scaleX:1,scaleY:1,x:520.1,y:205},28).wait(101).to({startPosition:0},0).wait(1));
 
-	// palma1
-	this.instance_12 = new lib.Tween12("synched",0);
+	// palmaNova
+	this.instance_12 = new lib.Tween145("synched",0);
 	this.instance_12.parent = this;
-	this.instance_12.setTransform(209.1,288,0.067,0.067,0,0,0,0.8,0.8);
+	this.instance_12.setTransform(205,291.7,0.08,0.08,0,0,0,0.7,0);
 	this.instance_12._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(71).to({_off:false},0).to({regX:0,regY:0,scaleX:1,scaleY:1,x:197.1,y:216},30).wait(95).to({startPosition:0},0).wait(1));
+	this.instance_13 = new lib.Flamingologo85();
+	this.instance_13.parent = this;
+	this.instance_13.setTransform(115,137,0.53,0.53);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_12}]},121).to({state:[{t:this.instance_12}]},30).to({state:[{t:this.instance_13}]},95).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(121).to({_off:false},0).to({regX:0,scaleX:1,scaleY:1,x:194.8,y:216.5},30).to({_off:true},95).wait(1));
 
 	// lpart10
-	this.instance_13 = new lib.Tween97("synched",0);
-	this.instance_13.parent = this;
-	this.instance_13.setTransform(64.3,674);
-	this.instance_13._off = true;
-
-	this.instance_14 = new lib.Tween98("synched",0);
+	this.instance_14 = new lib.Tween97("synched",0);
 	this.instance_14.parent = this;
-	this.instance_14.setTransform(291.3,428);
+	this.instance_14.setTransform(64.3,674);
+	this.instance_14._off = true;
 
-	this.instance_15 = new lib.Flamingologo64();
+	this.instance_15 = new lib.Tween98("synched",0);
 	this.instance_15.parent = this;
-	this.instance_15.setTransform(216,353,0.5,0.5);
+	this.instance_15.setTransform(291.3,428);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_13}]},36).to({state:[{t:this.instance_14}]},5).to({state:[{t:this.instance_15}]},138).to({state:[{t:this.instance_15}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(36).to({_off:false},0).to({_off:true,x:291.3,y:428},5).wait(156));
+	this.instance_16 = new lib.Flamingologo64();
+	this.instance_16.parent = this;
+	this.instance_16.setTransform(216,353,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_14}]},86).to({state:[{t:this.instance_15}]},5).to({state:[{t:this.instance_16}]},138).to({state:[{t:this.instance_16}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_14).wait(86).to({_off:false},0).to({_off:true,x:291.3,y:428},5).wait(156));
 
 	// lpart9
-	this.instance_16 = new lib.Tween54("synched",0);
-	this.instance_16.parent = this;
-	this.instance_16.setTransform(-6.7,655);
-	this.instance_16._off = true;
-
-	this.instance_17 = new lib.Flamingologo63();
+	this.instance_17 = new lib.Tween54("synched",0);
 	this.instance_17.parent = this;
-	this.instance_17.setTransform(216,320,0.5,0.5);
+	this.instance_17.setTransform(-6.7,655);
+	this.instance_17._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_16}]},32).to({state:[{t:this.instance_16}]},5).to({state:[{t:this.instance_17}]},142).to({state:[{t:this.instance_17}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_16).wait(32).to({_off:false},0).to({x:291.3,y:395},5).to({_off:true},142).wait(18));
+	this.instance_18 = new lib.Flamingologo63();
+	this.instance_18.parent = this;
+	this.instance_18.setTransform(216,320,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_17}]},82).to({state:[{t:this.instance_17}]},5).to({state:[{t:this.instance_18}]},142).to({state:[{t:this.instance_18}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_17).wait(82).to({_off:false},0).to({x:291.3,y:395},5).to({_off:true},142).wait(18));
 
 	// lpart8
-	this.instance_18 = new lib.Tween56("synched",0);
-	this.instance_18.parent = this;
-	this.instance_18.setTransform(-47.7,593);
-	this.instance_18._off = true;
-
-	this.instance_19 = new lib.Flamingologo62();
+	this.instance_19 = new lib.Tween56("synched",0);
 	this.instance_19.parent = this;
-	this.instance_19.setTransform(171,319,0.5,0.5);
+	this.instance_19.setTransform(-47.7,593);
+	this.instance_19._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_18}]},28).to({state:[{t:this.instance_18}]},5).to({state:[{t:this.instance_19}]},146).to({state:[{t:this.instance_19}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(28).to({_off:false},0).to({x:246.3,y:394},5).to({_off:true},146).wait(18));
+	this.instance_20 = new lib.Flamingologo62();
+	this.instance_20.parent = this;
+	this.instance_20.setTransform(171,319,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_19}]},78).to({state:[{t:this.instance_19}]},5).to({state:[{t:this.instance_20}]},146).to({state:[{t:this.instance_20}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(78).to({_off:false},0).to({x:246.3,y:394},5).to({_off:true},146).wait(18));
 
 	// lpart7
-	this.instance_20 = new lib.Tween79("synched",0);
-	this.instance_20.parent = this;
-	this.instance_20.setTransform(-43.7,538);
-	this.instance_20._off = true;
-
-	this.instance_21 = new lib.Flamingologo61();
+	this.instance_21 = new lib.Tween79("synched",0);
 	this.instance_21.parent = this;
-	this.instance_21.setTransform(160,285,0.5,0.5);
+	this.instance_21.setTransform(-43.7,538);
+	this.instance_21._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_20}]},23).to({state:[{t:this.instance_20}]},6).to({state:[{t:this.instance_21}]},150).to({state:[{t:this.instance_21}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(23).to({_off:false},0).to({x:235.3,y:360},6).to({_off:true},150).wait(18));
+	this.instance_22 = new lib.Flamingologo61();
+	this.instance_22.parent = this;
+	this.instance_22.setTransform(160,285,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_21}]},73).to({state:[{t:this.instance_21}]},6).to({state:[{t:this.instance_22}]},150).to({state:[{t:this.instance_22}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(73).to({_off:false},0).to({x:235.3,y:360},6).to({_off:true},150).wait(18));
 
 	// lpart6
-	this.instance_22 = new lib.Tween81("synched",0);
-	this.instance_22.parent = this;
-	this.instance_22.setTransform(-93.7,471);
-	this.instance_22._off = true;
-
-	this.instance_23 = new lib.Flamingologo60();
+	this.instance_23 = new lib.Tween81("synched",0);
 	this.instance_23.parent = this;
-	this.instance_23.setTransform(113,255,0.5,0.5);
+	this.instance_23.setTransform(-93.7,471);
+	this.instance_23._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_22}]},19).to({state:[{t:this.instance_22}]},5).to({state:[{t:this.instance_23}]},155).to({state:[{t:this.instance_23}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(19).to({_off:false},0).to({x:188.3,y:330},5).to({_off:true},155).wait(18));
+	this.instance_24 = new lib.Flamingologo60();
+	this.instance_24.parent = this;
+	this.instance_24.setTransform(113,255,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_23}]},69).to({state:[{t:this.instance_23}]},5).to({state:[{t:this.instance_24}]},155).to({state:[{t:this.instance_24}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(69).to({_off:false},0).to({x:188.3,y:330},5).to({_off:true},155).wait(18));
 
 	// lpart5
-	this.instance_24 = new lib.Tween83("synched",0);
-	this.instance_24.parent = this;
-	this.instance_24.setTransform(-77.7,446);
-	this.instance_24._off = true;
-
-	this.instance_25 = new lib.Flamingologo59();
+	this.instance_25 = new lib.Tween83("synched",0);
 	this.instance_25.parent = this;
-	this.instance_25.setTransform(207,265,0.5,0.5);
+	this.instance_25.setTransform(-77.7,446);
+	this.instance_25._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_24}]},16).to({state:[{t:this.instance_24}]},4).to({state:[{t:this.instance_25}]},159).to({state:[{t:this.instance_25}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_24).wait(16).to({_off:false},0).to({x:282.3,y:340},4).to({_off:true},159).wait(18));
+	this.instance_26 = new lib.Flamingologo59();
+	this.instance_26.parent = this;
+	this.instance_26.setTransform(207,265,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_25}]},66).to({state:[{t:this.instance_25}]},4).to({state:[{t:this.instance_26}]},159).to({state:[{t:this.instance_26}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_25).wait(66).to({_off:false},0).to({x:282.3,y:340},4).to({_off:true},159).wait(18));
 
 	// lpart4
-	this.instance_26 = new lib.Tween85("synched",0);
-	this.instance_26.parent = this;
-	this.instance_26.setTransform(-74.7,366);
-	this.instance_26._off = true;
-
-	this.instance_27 = new lib.Flamingologo58();
+	this.instance_27 = new lib.Tween85("synched",0);
 	this.instance_27.parent = this;
-	this.instance_27.setTransform(144,217,0.5,0.5);
+	this.instance_27.setTransform(-74.7,366);
+	this.instance_27._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_26}]},13).to({state:[{t:this.instance_26}]},4).to({state:[{t:this.instance_27}]},162).to({state:[{t:this.instance_27}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_26).wait(13).to({_off:false},0).to({x:219.3,y:292},4).to({_off:true},162).wait(18));
+	this.instance_28 = new lib.Flamingologo58();
+	this.instance_28.parent = this;
+	this.instance_28.setTransform(144,217,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_27}]},63).to({state:[{t:this.instance_27}]},4).to({state:[{t:this.instance_28}]},162).to({state:[{t:this.instance_28}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_27).wait(63).to({_off:false},0).to({x:219.3,y:292},4).to({_off:true},162).wait(18));
 
 	// lpart3
-	this.instance_28 = new lib.Tween87("synched",0);
-	this.instance_28.parent = this;
-	this.instance_28.setTransform(-22.7,316);
-	this.instance_28._off = true;
-
-	this.instance_29 = new lib.Flamingologo57();
+	this.instance_29 = new lib.Tween87("synched",0);
 	this.instance_29.parent = this;
-	this.instance_29.setTransform(205,217,0.5,0.5);
+	this.instance_29.setTransform(-22.7,316);
+	this.instance_29._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_28}]},8).to({state:[{t:this.instance_28}]},5).to({state:[{t:this.instance_29}]},166).to({state:[{t:this.instance_29}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_28).wait(8).to({_off:false},0).to({x:280.3,y:292},5).to({_off:true},166).wait(18));
+	this.instance_30 = new lib.Flamingologo57();
+	this.instance_30.parent = this;
+	this.instance_30.setTransform(205,217,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_29}]},58).to({state:[{t:this.instance_29}]},5).to({state:[{t:this.instance_30}]},166).to({state:[{t:this.instance_30}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_29).wait(58).to({_off:false},0).to({x:280.3,y:292},5).to({_off:true},166).wait(18));
 
 	// lpart2
-	this.instance_30 = new lib.Tween89("synched",0);
-	this.instance_30.parent = this;
-	this.instance_30.setTransform(-19.7,245);
-
-	this.instance_31 = new lib.Flamingologo56();
+	this.instance_31 = new lib.Tween89("synched",0);
 	this.instance_31.parent = this;
-	this.instance_31.setTransform(193,186,0.5,0.5);
+	this.instance_31.setTransform(-19.7,245);
+	this.instance_31._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_30}]}).to({state:[{t:this.instance_30}]},6).to({state:[{t:this.instance_31}]},173).to({state:[{t:this.instance_31}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_30).to({x:268.3,y:261},6).to({_off:true},173).wait(18));
+	this.instance_32 = new lib.Flamingologo56();
+	this.instance_32.parent = this;
+	this.instance_32.setTransform(193,186,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_31}]},50).to({state:[{t:this.instance_31}]},6).to({state:[{t:this.instance_32}]},173).to({state:[{t:this.instance_32}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_31).wait(50).to({_off:false},0).to({x:268.3,y:261},6).to({_off:true},173).wait(18));
 
 	// lpart1
-	this.instance_32 = new lib.Tween91("synched",0);
-	this.instance_32.parent = this;
-	this.instance_32.setTransform(-47.7,267);
-	this.instance_32._off = true;
-
-	this.instance_33 = new lib.Flamingologo55();
+	this.instance_33 = new lib.Tween91("synched",0);
 	this.instance_33.parent = this;
-	this.instance_33.setTransform(141,191,0.5,0.5);
+	this.instance_33.setTransform(-47.7,267);
+	this.instance_33._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_32}]},4).to({state:[{t:this.instance_32}]},6).to({state:[{t:this.instance_33}]},169).to({state:[{t:this.instance_33}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_32).wait(4).to({_off:false},0).to({x:216.3,y:266},6).to({_off:true},169).wait(18));
+	this.instance_34 = new lib.Flamingologo55();
+	this.instance_34.parent = this;
+	this.instance_34.setTransform(141,191,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_33}]},54).to({state:[{t:this.instance_33}]},6).to({state:[{t:this.instance_34}]},169).to({state:[{t:this.instance_34}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_33).wait(54).to({_off:false},0).to({x:216.3,y:266},6).to({_off:true},169).wait(18));
 
 	// spart8
-	this.instance_34 = new lib.Tween113("synched",0);
-	this.instance_34.parent = this;
-	this.instance_34.setTransform(587.3,694);
-	this.instance_34._off = true;
-
-	this.instance_35 = new lib.Tween114("synched",0);
+	this.instance_35 = new lib.Tween113("synched",0);
 	this.instance_35.parent = this;
-	this.instance_35.setTransform(403.3,530);
+	this.instance_35.setTransform(587.3,694);
+	this.instance_35._off = true;
 
-	this.instance_36 = new lib.Flamingologo72();
+	this.instance_36 = new lib.Tween114("synched",0);
 	this.instance_36.parent = this;
-	this.instance_36.setTransform(328,455,0.5,0.5);
+	this.instance_36.setTransform(403.3,530);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_34}]},28).to({state:[{t:this.instance_35}]},6).to({state:[{t:this.instance_36}]},145).to({state:[{t:this.instance_36}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_34).wait(28).to({_off:false},0).to({_off:true,x:403.3,y:530},6).wait(163));
+	this.instance_37 = new lib.Flamingologo72();
+	this.instance_37.parent = this;
+	this.instance_37.setTransform(328,455,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_35}]},78).to({state:[{t:this.instance_36}]},6).to({state:[{t:this.instance_37}]},145).to({state:[{t:this.instance_37}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_35).wait(78).to({_off:false},0).to({_off:true,x:403.3,y:530},6).wait(163));
 
 	// spart7
-	this.instance_37 = new lib.Tween111("synched",0);
-	this.instance_37.parent = this;
-	this.instance_37.setTransform(504.3,656);
-	this.instance_37._off = true;
-
-	this.instance_38 = new lib.Tween112("synched",0);
+	this.instance_38 = new lib.Tween111("synched",0);
 	this.instance_38.parent = this;
-	this.instance_38.setTransform(404.3,488);
+	this.instance_38.setTransform(504.3,656);
+	this.instance_38._off = true;
 
-	this.instance_39 = new lib.Flamingologo71();
+	this.instance_39 = new lib.Tween112("synched",0);
 	this.instance_39.parent = this;
-	this.instance_39.setTransform(329,413,0.5,0.5);
+	this.instance_39.setTransform(404.3,488);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_37}]},24).to({state:[{t:this.instance_38}]},5).to({state:[{t:this.instance_39}]},150).to({state:[{t:this.instance_39}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_37).wait(24).to({_off:false},0).to({_off:true,x:404.3,y:488},5).wait(168));
+	this.instance_40 = new lib.Flamingologo71();
+	this.instance_40.parent = this;
+	this.instance_40.setTransform(329,413,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_38}]},74).to({state:[{t:this.instance_39}]},5).to({state:[{t:this.instance_40}]},150).to({state:[{t:this.instance_40}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_38).wait(74).to({_off:false},0).to({_off:true,x:404.3,y:488},5).wait(168));
 
 	// spart6
-	this.instance_40 = new lib.Tween109("synched",0);
-	this.instance_40.parent = this;
-	this.instance_40.setTransform(447.3,638);
-	this.instance_40._off = true;
-
-	this.instance_41 = new lib.Tween110("synched",0);
+	this.instance_41 = new lib.Tween109("synched",0);
 	this.instance_41.parent = this;
-	this.instance_41.setTransform(405.3,459);
+	this.instance_41.setTransform(447.3,638);
+	this.instance_41._off = true;
 
-	this.instance_42 = new lib.Flamingologo70();
+	this.instance_42 = new lib.Tween110("synched",0);
 	this.instance_42.parent = this;
-	this.instance_42.setTransform(330,384,0.5,0.5);
+	this.instance_42.setTransform(405.3,459);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_40}]},19).to({state:[{t:this.instance_41}]},6).to({state:[{t:this.instance_42}]},154).to({state:[{t:this.instance_42}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_40).wait(19).to({_off:false},0).to({_off:true,x:405.3,y:459},6).wait(172));
+	this.instance_43 = new lib.Flamingologo70();
+	this.instance_43.parent = this;
+	this.instance_43.setTransform(330,384,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_41}]},69).to({state:[{t:this.instance_42}]},6).to({state:[{t:this.instance_43}]},154).to({state:[{t:this.instance_43}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_41).wait(69).to({_off:false},0).to({_off:true,x:405.3,y:459},6).wait(172));
 
 	// spart5
-	this.instance_43 = new lib.Tween107("synched",0);
-	this.instance_43.parent = this;
-	this.instance_43.setTransform(361.3,685);
-	this.instance_43._off = true;
-
-	this.instance_44 = new lib.Tween108("synched",0);
+	this.instance_44 = new lib.Tween107("synched",0);
 	this.instance_44.parent = this;
-	this.instance_44.setTransform(344.3,493);
+	this.instance_44.setTransform(361.3,685);
+	this.instance_44._off = true;
 
-	this.instance_45 = new lib.Flamingologo69();
+	this.instance_45 = new lib.Tween108("synched",0);
 	this.instance_45.parent = this;
-	this.instance_45.setTransform(269,418,0.5,0.5);
+	this.instance_45.setTransform(344.3,493);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_43}]},15).to({state:[{t:this.instance_44}]},5).to({state:[{t:this.instance_45}]},159).to({state:[{t:this.instance_45}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_43).wait(15).to({_off:false},0).to({_off:true,x:344.3,y:493},5).wait(177));
+	this.instance_46 = new lib.Flamingologo69();
+	this.instance_46.parent = this;
+	this.instance_46.setTransform(269,418,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_44}]},65).to({state:[{t:this.instance_45}]},5).to({state:[{t:this.instance_46}]},159).to({state:[{t:this.instance_46}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_44).wait(65).to({_off:false},0).to({_off:true,x:344.3,y:493},5).wait(177));
 
 	// spart3
-	this.instance_46 = new lib.Tween105("synched",0);
-	this.instance_46.parent = this;
-	this.instance_46.setTransform(296.3,664);
-	this.instance_46._off = true;
-
-	this.instance_47 = new lib.Tween106("synched",0);
+	this.instance_47 = new lib.Tween105("synched",0);
 	this.instance_47.parent = this;
-	this.instance_47.setTransform(411.3,404);
+	this.instance_47.setTransform(296.3,664);
+	this.instance_47._off = true;
 
-	this.instance_48 = new lib.Flamingologo67();
+	this.instance_48 = new lib.Tween106("synched",0);
 	this.instance_48.parent = this;
-	this.instance_48.setTransform(336,329,0.5,0.5);
+	this.instance_48.setTransform(411.3,404);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_46}]},11).to({state:[{t:this.instance_47}]},5).to({state:[{t:this.instance_48}]},163).to({state:[{t:this.instance_48}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_46).wait(11).to({_off:false},0).to({_off:true,x:411.3,y:404},5).wait(181));
+	this.instance_49 = new lib.Flamingologo67();
+	this.instance_49.parent = this;
+	this.instance_49.setTransform(336,329,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_47}]},61).to({state:[{t:this.instance_48}]},5).to({state:[{t:this.instance_49}]},163).to({state:[{t:this.instance_49}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_47).wait(61).to({_off:false},0).to({_off:true,x:411.3,y:404},5).wait(181));
 
 	// spart4
-	this.instance_49 = new lib.Tween103("synched",0);
-	this.instance_49.parent = this;
-	this.instance_49.setTransform(277.3,638);
-	this.instance_49._off = true;
-
-	this.instance_50 = new lib.Tween104("synched",0);
+	this.instance_50 = new lib.Tween103("synched",0);
 	this.instance_50.parent = this;
-	this.instance_50.setTransform(344.3,453);
+	this.instance_50.setTransform(277.3,638);
+	this.instance_50._off = true;
 
-	this.instance_51 = new lib.Flamingologo68();
+	this.instance_51 = new lib.Tween104("synched",0);
 	this.instance_51.parent = this;
-	this.instance_51.setTransform(269,378,0.5,0.5);
+	this.instance_51.setTransform(344.3,453);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_49}]},7).to({state:[{t:this.instance_50}]},5).to({state:[{t:this.instance_51}]},167).to({state:[{t:this.instance_51}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_49).wait(7).to({_off:false},0).to({_off:true,x:344.3,y:453},5).wait(185));
+	this.instance_52 = new lib.Flamingologo68();
+	this.instance_52.parent = this;
+	this.instance_52.setTransform(269,378,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_50}]},57).to({state:[{t:this.instance_51}]},5).to({state:[{t:this.instance_52}]},167).to({state:[{t:this.instance_52}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_50).wait(57).to({_off:false},0).to({_off:true,x:344.3,y:453},5).wait(185));
 
 	// spart2
-	this.instance_52 = new lib.Tween101("synched",0);
-	this.instance_52.parent = this;
-	this.instance_52.setTransform(202.3,669);
-	this.instance_52._off = true;
-
-	this.instance_53 = new lib.Tween102("synched",0);
+	this.instance_53 = new lib.Tween101("synched",0);
 	this.instance_53.parent = this;
-	this.instance_53.setTransform(371.3,383);
+	this.instance_53.setTransform(202.3,669);
+	this.instance_53._off = true;
 
-	this.instance_54 = new lib.Flamingologo66();
+	this.instance_54 = new lib.Tween102("synched",0);
 	this.instance_54.parent = this;
-	this.instance_54.setTransform(296,308,0.5,0.5);
+	this.instance_54.setTransform(371.3,383);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_52}]},3).to({state:[{t:this.instance_53}]},5).to({state:[{t:this.instance_54}]},171).to({state:[{t:this.instance_54}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_52).wait(3).to({_off:false},0).to({_off:true,x:371.3,y:383},5).wait(189));
+	this.instance_55 = new lib.Flamingologo66();
+	this.instance_55.parent = this;
+	this.instance_55.setTransform(296,308,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_53}]},53).to({state:[{t:this.instance_54}]},5).to({state:[{t:this.instance_55}]},171).to({state:[{t:this.instance_55}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_53).wait(53).to({_off:false},0).to({_off:true,x:371.3,y:383},5).wait(189));
 
 	// spart1
-	this.instance_55 = new lib.Tween99("synched",0);
-	this.instance_55.parent = this;
-	this.instance_55.setTransform(152.3,643);
-
-	this.instance_56 = new lib.Tween100("synched",0);
+	this.instance_56 = new lib.Tween99("synched",0);
 	this.instance_56.parent = this;
-	this.instance_56.setTransform(387.3,340);
+	this.instance_56.setTransform(152.3,643);
+	this.instance_56._off = true;
 
-	this.instance_57 = new lib.Flamingologo65();
+	this.instance_57 = new lib.Tween100("synched",0);
 	this.instance_57.parent = this;
-	this.instance_57.setTransform(312,265,0.5,0.5);
+	this.instance_57.setTransform(387.3,340);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_55}]}).to({state:[{t:this.instance_56}]},4).to({state:[{t:this.instance_57}]},175).to({state:[{t:this.instance_57}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_55).to({_off:true,x:387.3,y:340},4).wait(193));
+	this.instance_58 = new lib.Flamingologo65();
+	this.instance_58.parent = this;
+	this.instance_58.setTransform(312,265,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_56}]},50).to({state:[{t:this.instance_57}]},4).to({state:[{t:this.instance_58}]},175).to({state:[{t:this.instance_58}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_56).wait(50).to({_off:false},0).to({_off:true,x:387.3,y:340},4).wait(193));
 
 	// part2
-	this.instance_58 = new lib.Tween137("synched",0);
-	this.instance_58.parent = this;
-	this.instance_58.setTransform(855.3,289);
-	this.instance_58._off = true;
-
-	this.instance_59 = new lib.Tween138("synched",0);
+	this.instance_59 = new lib.Tween137("synched",0);
 	this.instance_59.parent = this;
-	this.instance_59.setTransform(562.3,275);
+	this.instance_59.setTransform(855.3,289);
+	this.instance_59._off = true;
 
-	this.instance_60 = new lib.Flamingologo74();
+	this.instance_60 = new lib.Tween138("synched",0);
 	this.instance_60.parent = this;
-	this.instance_60.setTransform(487,200,0.5,0.5);
+	this.instance_60.setTransform(562.3,275);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_58}]},52).to({state:[{t:this.instance_59}]},6).to({state:[{t:this.instance_60}]},121).to({state:[{t:this.instance_60}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_58).wait(52).to({_off:false},0).to({_off:true,x:562.3,y:275},6).wait(139));
+	this.instance_61 = new lib.Flamingologo74();
+	this.instance_61.parent = this;
+	this.instance_61.setTransform(487,200,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_59}]},102).to({state:[{t:this.instance_60}]},6).to({state:[{t:this.instance_61}]},121).to({state:[{t:this.instance_61}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_59).wait(102).to({_off:false},0).to({_off:true,x:562.3,y:275},6).wait(139));
 
 	// part5
-	this.instance_61 = new lib.Tween135("synched",0);
-	this.instance_61.parent = this;
-	this.instance_61.setTransform(839.3,335);
-	this.instance_61._off = true;
-
-	this.instance_62 = new lib.Tween136("synched",0);
+	this.instance_62 = new lib.Tween135("synched",0);
 	this.instance_62.parent = this;
-	this.instance_62.setTransform(516.3,335);
+	this.instance_62.setTransform(839.3,335);
+	this.instance_62._off = true;
 
-	this.instance_63 = new lib.Flamingologo77();
+	this.instance_63 = new lib.Tween136("synched",0);
 	this.instance_63.parent = this;
-	this.instance_63.setTransform(441,260,0.5,0.5);
+	this.instance_63.setTransform(516.3,335);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_61}]},48).to({state:[{t:this.instance_62}]},5).to({state:[{t:this.instance_63}]},126).to({state:[{t:this.instance_63}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_61).wait(48).to({_off:false},0).to({_off:true,x:516.3},5).wait(144));
+	this.instance_64 = new lib.Flamingologo77();
+	this.instance_64.parent = this;
+	this.instance_64.setTransform(441,260,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_62}]},98).to({state:[{t:this.instance_63}]},5).to({state:[{t:this.instance_64}]},126).to({state:[{t:this.instance_64}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_62).wait(98).to({_off:false},0).to({_off:true,x:516.3},5).wait(144));
 
 	// part6
-	this.instance_64 = new lib.Tween115("synched",0);
-	this.instance_64.parent = this;
-	this.instance_64.setTransform(535.3,708);
-	this.instance_64._off = true;
-
-	this.instance_65 = new lib.Flamingologo78();
+	this.instance_65 = new lib.Tween115("synched",0);
 	this.instance_65.parent = this;
-	this.instance_65.setTransform(388,329,0.5,0.5);
+	this.instance_65.setTransform(535.3,708);
+	this.instance_65._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_64}]},26).to({state:[{t:this.instance_65}]},6).to({state:[{t:this.instance_65}]},147).to({state:[{t:this.instance_65}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_64).wait(26).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:388,y:329},6).wait(165));
+	this.instance_66 = new lib.Flamingologo78();
+	this.instance_66.parent = this;
+	this.instance_66.setTransform(388,329,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_65}]},76).to({state:[{t:this.instance_66}]},6).to({state:[{t:this.instance_66}]},147).to({state:[{t:this.instance_66}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_65).wait(76).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:388,y:329},6).wait(165));
 
 	// part4
-	this.instance_66 = new lib.Tween131("synched",0);
-	this.instance_66.parent = this;
-	this.instance_66.setTransform(838.3,389);
-	this.instance_66._off = true;
-
-	this.instance_67 = new lib.Tween132("synched",0);
+	this.instance_67 = new lib.Tween131("synched",0);
 	this.instance_67.parent = this;
-	this.instance_67.setTransform(463.3,340);
+	this.instance_67.setTransform(838.3,389);
+	this.instance_67._off = true;
 
-	this.instance_68 = new lib.Flamingologo76();
+	this.instance_68 = new lib.Tween132("synched",0);
 	this.instance_68.parent = this;
-	this.instance_68.setTransform(388,265,0.5,0.5);
+	this.instance_68.setTransform(463.3,340);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_66}]},42).to({state:[{t:this.instance_67}]},7).to({state:[{t:this.instance_68}]},130).to({state:[{t:this.instance_68}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_66).wait(42).to({_off:false},0).to({_off:true,x:463.3,y:340},7).wait(148));
+	this.instance_69 = new lib.Flamingologo76();
+	this.instance_69.parent = this;
+	this.instance_69.setTransform(388,265,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_67}]},92).to({state:[{t:this.instance_68}]},7).to({state:[{t:this.instance_69}]},130).to({state:[{t:this.instance_69}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_67).wait(92).to({_off:false},0).to({_off:true,x:463.3,y:340},7).wait(148));
 
 	// part3
-	this.instance_69 = new lib.Tween129("synched",0);
-	this.instance_69.parent = this;
-	this.instance_69.setTransform(869.3,322);
-	this.instance_69._off = true;
-
-	this.instance_70 = new lib.Tween130("synched",0);
+	this.instance_70 = new lib.Tween129("synched",0);
 	this.instance_70.parent = this;
-	this.instance_70.setTransform(562.3,290);
+	this.instance_70.setTransform(869.3,322);
+	this.instance_70._off = true;
 
-	this.instance_71 = new lib.Flamingologo75();
+	this.instance_71 = new lib.Tween130("synched",0);
 	this.instance_71.parent = this;
-	this.instance_71.setTransform(487,215,0.5,0.5);
+	this.instance_71.setTransform(562.3,290);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_69}]},37).to({state:[{t:this.instance_70}]},6).to({state:[{t:this.instance_71}]},136).to({state:[{t:this.instance_71}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_69).wait(37).to({_off:false},0).to({_off:true,x:562.3,y:290},6).wait(154));
+	this.instance_72 = new lib.Flamingologo75();
+	this.instance_72.parent = this;
+	this.instance_72.setTransform(487,215,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_70}]},87).to({state:[{t:this.instance_71}]},6).to({state:[{t:this.instance_72}]},136).to({state:[{t:this.instance_72}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_70).wait(87).to({_off:false},0).to({_off:true,x:562.3,y:290},6).wait(154));
 
 	// part12
-	this.instance_72 = new lib.Tween121("synched",0);
-	this.instance_72.parent = this;
-	this.instance_72.setTransform(693.3,725);
-	this.instance_72._off = true;
-
-	this.instance_73 = new lib.Flamingologo84();
+	this.instance_73 = new lib.Tween121("synched",0);
 	this.instance_73.parent = this;
-	this.instance_73.setTransform(445,361,0.5,0.5);
+	this.instance_73.setTransform(693.3,725);
+	this.instance_73._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_72}]},20).to({state:[{t:this.instance_73}]},7).to({state:[{t:this.instance_73}]},152).to({state:[{t:this.instance_73}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_72).wait(20).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:445,y:361},7).wait(170));
+	this.instance_74 = new lib.Flamingologo84();
+	this.instance_74.parent = this;
+	this.instance_74.setTransform(445,361,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_73}]},70).to({state:[{t:this.instance_74}]},7).to({state:[{t:this.instance_74}]},152).to({state:[{t:this.instance_74}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_73).wait(70).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:445,y:361},7).wait(170));
 
 	// part11
-	this.instance_74 = new lib.Tween125("synched",0);
-	this.instance_74.parent = this;
-	this.instance_74.setTransform(699.3,694);
-	this.instance_74._off = true;
-
-	this.instance_75 = new lib.Flamingologo83();
+	this.instance_75 = new lib.Tween125("synched",0);
 	this.instance_75.parent = this;
-	this.instance_75.setTransform(456,335,0.5,0.5);
+	this.instance_75.setTransform(699.3,694);
+	this.instance_75._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_74}]},15).to({state:[{t:this.instance_75}]},6).to({state:[{t:this.instance_75}]},158).to({state:[{t:this.instance_75}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_74).wait(15).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:456,y:335},6).wait(176));
+	this.instance_76 = new lib.Flamingologo83();
+	this.instance_76.parent = this;
+	this.instance_76.setTransform(456,335,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_75}]},65).to({state:[{t:this.instance_76}]},6).to({state:[{t:this.instance_76}]},158).to({state:[{t:this.instance_76}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_75).wait(65).to({_off:false},0).to({_off:true,scaleX:0.5,scaleY:0.5,x:456,y:335},6).wait(176));
 
 	// part10
-	this.instance_76 = new lib.Tween127("synched",0);
-	this.instance_76.parent = this;
-	this.instance_76.setTransform(738.3,652);
-	this.instance_76._off = true;
-
-	this.instance_77 = new lib.Tween128("synched",0);
+	this.instance_77 = new lib.Tween127("synched",0);
 	this.instance_77.parent = this;
-	this.instance_77.setTransform(521.3,373);
+	this.instance_77.setTransform(738.3,652);
+	this.instance_77._off = true;
 
-	this.instance_78 = new lib.Flamingologo82();
+	this.instance_78 = new lib.Tween128("synched",0);
 	this.instance_78.parent = this;
-	this.instance_78.setTransform(446,298,0.5,0.5);
+	this.instance_78.setTransform(521.3,373);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_76}]},31).to({state:[{t:this.instance_77}]},7).to({state:[{t:this.instance_78}]},141).to({state:[{t:this.instance_78}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_76).wait(31).to({_off:false},0).to({_off:true,x:521.3,y:373},7).wait(159));
+	this.instance_79 = new lib.Flamingologo82();
+	this.instance_79.parent = this;
+	this.instance_79.setTransform(446,298,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_77}]},81).to({state:[{t:this.instance_78}]},7).to({state:[{t:this.instance_79}]},141).to({state:[{t:this.instance_79}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_77).wait(81).to({_off:false},0).to({_off:true,x:521.3,y:373},7).wait(159));
 
 	// part9
-	this.instance_79 = new lib.Tween123("synched",0);
-	this.instance_79.parent = this;
-	this.instance_79.setTransform(839.3,429);
-	this.instance_79._off = true;
-
-	this.instance_80 = new lib.Tween124("synched",0);
+	this.instance_80 = new lib.Tween123("synched",0);
 	this.instance_80.parent = this;
-	this.instance_80.setTransform(573.3,350);
+	this.instance_80.setTransform(839.3,429);
+	this.instance_80._off = true;
 
-	this.instance_81 = new lib.Flamingologo81();
+	this.instance_81 = new lib.Tween124("synched",0);
 	this.instance_81.parent = this;
-	this.instance_81.setTransform(498,275,0.5,0.5);
+	this.instance_81.setTransform(573.3,350);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_79}]},11).to({state:[{t:this.instance_80}]},5).to({state:[{t:this.instance_81}]},163).to({state:[{t:this.instance_81}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_79).wait(11).to({_off:false},0).to({_off:true,x:573.3,y:350},5).wait(181));
+	this.instance_82 = new lib.Flamingologo81();
+	this.instance_82.parent = this;
+	this.instance_82.setTransform(498,275,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_80}]},61).to({state:[{t:this.instance_81}]},5).to({state:[{t:this.instance_82}]},163).to({state:[{t:this.instance_82}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_80).wait(61).to({_off:false},0).to({_off:true,x:573.3,y:350},5).wait(181));
 
 	// part8
-	this.instance_82 = new lib.Tween117("synched",0);
-	this.instance_82.parent = this;
-	this.instance_82.setTransform(637.3,649);
-
-	this.instance_83 = new lib.Tween118("synched",0);
+	this.instance_83 = new lib.Tween117("synched",0);
 	this.instance_83.parent = this;
-	this.instance_83.setTransform(465.3,488);
+	this.instance_83.setTransform(637.3,649);
+	this.instance_83._off = true;
 
-	this.instance_84 = new lib.Flamingologo80();
+	this.instance_84 = new lib.Tween118("synched",0);
 	this.instance_84.parent = this;
-	this.instance_84.setTransform(390,413,0.5,0.5);
+	this.instance_84.setTransform(465.3,488);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_82}]}).to({state:[{t:this.instance_83}]},7).to({state:[{t:this.instance_84}]},172).to({state:[{t:this.instance_84}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_82).to({_off:true,x:465.3,y:488},7).wait(190));
+	this.instance_85 = new lib.Flamingologo80();
+	this.instance_85.parent = this;
+	this.instance_85.setTransform(390,413,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_83}]},50).to({state:[{t:this.instance_84}]},7).to({state:[{t:this.instance_85}]},172).to({state:[{t:this.instance_85}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_83).wait(50).to({_off:false},0).to({_off:true,x:465.3,y:488},7).wait(190));
 
 	// part7
-	this.instance_85 = new lib.Tween119("synched",0);
-	this.instance_85.parent = this;
-	this.instance_85.setTransform(671.3,655);
-	this.instance_85._off = true;
-
-	this.instance_86 = new lib.Tween120("synched",0);
+	this.instance_86 = new lib.Tween119("synched",0);
 	this.instance_86.parent = this;
-	this.instance_86.setTransform(472.3,417);
+	this.instance_86.setTransform(671.3,655);
+	this.instance_86._off = true;
 
-	this.instance_87 = new lib.Flamingologo79();
+	this.instance_87 = new lib.Tween120("synched",0);
 	this.instance_87.parent = this;
-	this.instance_87.setTransform(397,342,0.5,0.5);
+	this.instance_87.setTransform(472.3,417);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_85}]},6).to({state:[{t:this.instance_86}]},6).to({state:[{t:this.instance_87}]},167).to({state:[{t:this.instance_87}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_85).wait(6).to({_off:false},0).to({_off:true,x:472.3,y:417},6).wait(185));
+	this.instance_88 = new lib.Flamingologo79();
+	this.instance_88.parent = this;
+	this.instance_88.setTransform(397,342,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_86}]},56).to({state:[{t:this.instance_87}]},6).to({state:[{t:this.instance_88}]},167).to({state:[{t:this.instance_88}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_86).wait(56).to({_off:false},0).to({_off:true,x:472.3,y:417},6).wait(185));
 
 	// part1
-	this.instance_88 = new lib.Tween141("synched",0);
-	this.instance_88.parent = this;
-	this.instance_88.setTransform(832.3,278);
-	this.instance_88._off = true;
-
-	this.instance_89 = new lib.Tween142("synched",0);
+	this.instance_89 = new lib.Tween141("synched",0);
 	this.instance_89.parent = this;
-	this.instance_89.setTransform(504.3,268);
+	this.instance_89.setTransform(832.3,278);
+	this.instance_89._off = true;
 
-	this.instance_90 = new lib.Flamingologo73pngcopy2();
+	this.instance_90 = new lib.Tween142("synched",0);
 	this.instance_90.parent = this;
-	this.instance_90.setTransform(429,193,0.5,0.5);
+	this.instance_90.setTransform(504.3,268);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_88}]},57).to({state:[{t:this.instance_89}]},5).to({state:[{t:this.instance_90}]},117).to({state:[{t:this.instance_90}]},17).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_88).wait(57).to({_off:false},0).to({_off:true,x:504.3,y:268},5).wait(135));
+	this.instance_91 = new lib.Flamingologo73pngcopy2();
+	this.instance_91.parent = this;
+	this.instance_91.setTransform(429,193,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_89}]},107).to({state:[{t:this.instance_90}]},5).to({state:[{t:this.instance_91}]},117).to({state:[{t:this.instance_91}]},17).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_89).wait(107).to({_off:false},0).to({_off:true,x:504.3,y:268},5).wait(135));
 
 	// odlomak3
-	this.instance_91 = new lib.Tween51("synched",0);
-	this.instance_91.parent = this;
-	this.instance_91.setTransform(476,463.1);
-	this.instance_91._off = true;
-
-	this.instance_92 = new lib.Tween52("synched",0);
+	this.instance_92 = new lib.Tween51("synched",0);
 	this.instance_92.parent = this;
-	this.instance_92.setTransform(476,525.1);
+	this.instance_92.setTransform(476,463.1);
+	this.instance_92._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_91}]},185).to({state:[{t:this.instance_92}]},11).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_91).wait(185).to({_off:false},0).to({_off:true,y:525.1},11).wait(1));
+	this.instance_93 = new lib.Tween52("synched",0);
+	this.instance_93.parent = this;
+	this.instance_93.setTransform(476,525.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_92}]},235).to({state:[{t:this.instance_93}]},11).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_92).wait(235).to({_off:false},0).to({_off:true,y:525.1},11).wait(1));
 
 	// odlomak2
-	this.instance_93 = new lib.Tween49("synched",0);
-	this.instance_93.parent = this;
-	this.instance_93.setTransform(428,509);
-	this.instance_93._off = true;
-
-	this.instance_94 = new lib.Tween50("synched",0);
+	this.instance_94 = new lib.Tween49("synched",0);
 	this.instance_94.parent = this;
-	this.instance_94.setTransform(428,563);
+	this.instance_94.setTransform(428,509);
+	this.instance_94._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_93}]},180).to({state:[{t:this.instance_94}]},13).to({state:[{t:this.instance_94}]},3).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_93).wait(180).to({_off:false},0).to({_off:true,y:563},13).wait(4));
+	this.instance_95 = new lib.Tween50("synched",0);
+	this.instance_95.parent = this;
+	this.instance_95.setTransform(428,563);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_94}]},230).to({state:[{t:this.instance_95}]},13).to({state:[{t:this.instance_95}]},3).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_94).wait(230).to({_off:false},0).to({_off:true,y:563},13).wait(4));
 
 	// odlomak1
-	this.instance_95 = new lib.Tween47("synched",0);
-	this.instance_95.parent = this;
-	this.instance_95.setTransform(324,497);
-	this.instance_95._off = true;
-
-	this.instance_96 = new lib.Tween48("synched",0);
+	this.instance_96 = new lib.Tween47("synched",0);
 	this.instance_96.parent = this;
-	this.instance_96.setTransform(313,570);
+	this.instance_96.setTransform(324,497);
+	this.instance_96._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_95}]},163).to({state:[{t:this.instance_96}]},12).to({state:[{t:this.instance_96}]},21).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_95).wait(163).to({_off:false},0).to({_off:true,x:313,y:570},12).wait(22));
+	this.instance_97 = new lib.Tween48("synched",0);
+	this.instance_97.parent = this;
+	this.instance_97.setTransform(313,570);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_96}]},213).to({state:[{t:this.instance_97}]},12).to({state:[{t:this.instance_97}]},21).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_96).wait(213).to({_off:false},0).to({_off:true,x:313,y:570},12).wait(22));
 
 	// vrhSteneHider
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#60B3F6").s().p("A9jMbIAA41MA7HAAAIAAY1g");
 	this.shape.setTransform(392.8,521.1);
+	this.shape._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(196).to({x:396.8},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(103).to({_off:false},0).wait(143).to({x:396.8},0).wait(1));
 
 	// VrhStene
-	this.instance_97 = new lib.Tween94("synched",0);
-	this.instance_97.parent = this;
-	this.instance_97.setTransform(388.5,573);
-	this.instance_97._off = true;
-
-	this.instance_98 = new lib.Tween143("synched",0);
+	this.instance_98 = new lib.Tween94("synched",0);
 	this.instance_98.parent = this;
-	this.instance_98.setTransform(388,209);
+	this.instance_98.setTransform(388.5,573);
+	this.instance_98._off = true;
 
-	this.instance_99 = new lib.Flamingologo37();
+	this.instance_99 = new lib.Tween143("synched",0);
 	this.instance_99.parent = this;
-	this.instance_99.setTransform(238,59,0.12,0.12);
+	this.instance_99.setTransform(388,209);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_97}]},86).to({state:[{t:this.instance_98}]},34).to({state:[{t:this.instance_99}]},76).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance_97).wait(86).to({_off:false},0).to({_off:true,x:388,y:209},34).wait(77));
+	this.instance_100 = new lib.Flamingologo37();
+	this.instance_100.parent = this;
+	this.instance_100.setTransform(238,59,0.12,0.12);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_98}]},136).to({state:[{t:this.instance_99}]},34).to({state:[{t:this.instance_100}]},76).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_98).wait(136).to({_off:false},0).to({_off:true,x:388,y:209},34).wait(77));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(305.1,470,807.5,554);
+p.nominalBounds = null;
 // library properties:
 lib.properties = {
 	id: '97CEC889F55E2A46841E570E9A285AA4',
@@ -1831,7 +1840,6 @@ lib.properties = {
 		{src:"images/Flamingologo41.png", id:"Flamingologo41"},
 		{src:"images/Flamingologo42.png", id:"Flamingologo42"},
 		{src:"images/Flamingologo43.png", id:"Flamingologo43"},
-		{src:"images/Flamingologo44.png", id:"Flamingologo44"},
 		{src:"images/Flamingologo45.png", id:"Flamingologo45"},
 		{src:"images/Flamingologo46.png", id:"Flamingologo46"},
 		{src:"images/Flamingologo51.png", id:"Flamingologo51"},
@@ -1864,7 +1872,8 @@ lib.properties = {
 		{src:"images/Flamingologo81.png", id:"Flamingologo81"},
 		{src:"images/Flamingologo82.png", id:"Flamingologo82"},
 		{src:"images/Flamingologo83.png", id:"Flamingologo83"},
-		{src:"images/Flamingologo84.png", id:"Flamingologo84"}
+		{src:"images/Flamingologo84.png", id:"Flamingologo84"},
+		{src:"images/Flamingologo85.png", id:"Flamingologo85"}
 	],
 	preloads: []
 };
