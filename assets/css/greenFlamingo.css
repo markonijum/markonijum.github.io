@@ -101,7 +101,9 @@ li.c-active
   color : white !important;
 }
 /*Concept section*/
-
+.slightly-bold {
+  font-weight: 500 !important;
+}
 /*Right accordion*/
 .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:hover, .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:focus{
   background-color: #60b3f6 !important; 
@@ -112,10 +114,14 @@ li.c-active
 .concept-box-left {
   background-color: #8cc63f !important;
   color : white !important;
-  font-weight: bold !important;
 } 
 .concept-btn {
   background-color: #60b3f6 ;
   border-color : #60b3f6 ;
 
+}
+
+.btn-white {
+  border-color : white !important;
+  color : white !important;
 }
