@@ -1203,6 +1203,23 @@ p.nominalBounds = new cjs.Rectangle(-150,-150,300,300);
 (lib.flamingoNovi800x600_version4 = function(mode,startPosition,loop) {
 if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
+	// timeline functions:
+	this.frame_246 = function() {
+		var event = new Event('AnimationStoped');
+		
+		// Listen for the event.
+		document.addEventListener('AnimationStoped', function (e) { 
+				createjs.Ticker.removeEventListener("tick",stage);
+				console.log("Animacija je zavrsena");
+			}, false);
+		
+		// Dispatch the event.
+		document.dispatchEvent(event);
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(246).call(this.frame_246).wait(1));
+
 	// title
 	this.instance = new lib.Tween28("synched",0);
 	this.instance.parent = this;
