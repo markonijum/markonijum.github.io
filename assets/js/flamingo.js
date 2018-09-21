@@ -1186,7 +1186,7 @@ p.nominalBounds = new cjs.Rectangle(-150,-150,300,300);
 
 
 // stage content:
-(lib.flamingoNovi800x600_version4 = function(mode,startPosition,loop) {
+(lib.flamingoNovi800x600_version5 = function(mode,startPosition,loop) {
 if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
