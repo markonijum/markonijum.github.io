@@ -389,4 +389,14 @@ li.c-active
   background-color: #64b2fb !important;
   color: white;
 }
+
+.blog-sidebar .search-form .input-group {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .blog-sidebar .search-form .input-group {
+    margin-top: 0;
+  }
+}
 /*# sourceMappingURL=greenFlamingo.css.map */
