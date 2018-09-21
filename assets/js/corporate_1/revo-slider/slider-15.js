@@ -3,7 +3,8 @@ $(document).ready(function() {
 
     var cont = $('.c-layout-revo-slider .tp-banner-container');
 
-    var api = slider.show().revolution({
+    if(window.innerWidth > '777'){
+        var api = slider.show().revolution({
         sliderType:"standard",
         sliderLayout:"fullscreen",
         dottedOverlay:"none",
@@ -30,8 +31,8 @@ $(document).ready(function() {
             outof:"pause",
             visible_area:"80%"
         },
-        responsiveLevels:[1240,1024,778,480],
-        gridwidth:[1240,1024,778,480],
+        responsiveLevels:[1240,778,480],
+        gridwidth:[1240,778,480],
         gridheight:[800,800,500,400],
         lazyType:"none",
         parallax: {
@@ -58,4 +59,7 @@ $(document).ready(function() {
             disableFocusListener:false,
         }
     });
+    }
+
+    
 }); //ready

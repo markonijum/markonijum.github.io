@@ -3162,7 +3162,7 @@ h1 {
       position: relative;
       padding: 0 100px; }
   .c-layout-header .c-brand {
-    margin: 40px 0 37px 0; }
+    margin: 28px 0 37px 0; }
     .c-layout-header .c-brand .c-desktop-logo-inverse {
       display: none; }
     .c-layout-header .c-brand .c-desktop-logo {
@@ -3195,7 +3195,7 @@ h1 {
     line-height: 0px; }
     .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand {
       transition: margin 0.2s;
-      margin: 22px 0 19px 0; }
+      margin: 13px 0 19px 0; }
       .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand .c-desktop-logo {
         display: none; }
       .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand .c-desktop-logo-inverse {
@@ -4749,7 +4749,7 @@ h1 {
     .c-layout-header.c-layout-header-7 .c-quick-search > span {
       color: #828b96; }
   .c-page-on-scroll .c-layout-header.c-layout-header-7 {
-    background: rgba(30, 36, 42, 0.82);
+    background: rgba(72,134,185, 0.82);
     border-bottom: 0;
     box-shadow: none; }
     .c-page-on-scroll .c-layout-header.c-layout-header-7 .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-btn-icon,

@@ -1210,7 +1210,6 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 		// Listen for the event.
 		document.addEventListener('AnimationStoped', function (e) { 
 				createjs.Ticker.removeEventListener("tick",stage);
-				console.log("Animacija je zavrsena");
 			}, false);
 		
 		// Dispatch the event.
