@@ -181,13 +181,13 @@
       color:#000000 !important;
   }
   }
-  
+
   .c-theme-nav {
     li {
       &>.c-quick-sidebar-toggler {
         &>.c-line {
           transform: scale(1);
-          background:#000000 !important;
+          background:#ffffff !important;
           transition:all .2s ease;
         }
       }
@@ -195,7 +195,7 @@
         &>.c-quick-sidebar-toggler {
           &>.c-line {
             transform: scale(1.3,1);
-            background: #17191a !important;
+            background: #ffffff !important;
           }
         }
       }
@@ -212,6 +212,50 @@
           }
         }
     }
+  }
+}
+.black-nav-hamb {
+  .c-theme-nav {
+    li {
+      &>.c-quick-sidebar-toggler {
+        &>.c-line {
+          transform: scale(1);
+          background:#000000 !important;
+          transition:all .2s ease;
+        }
+      }
+      &:hover {
+        &>.c-quick-sidebar-toggler {
+          &>.c-line {
+            transform: scale(1.3,1);
+            background: #000000 !important;
+          }
+        }
+      }
+    }
+}
+}
+.c-page-on-scroll {
+  &.black-nav-hamb {
+    .c-theme-nav {
+      li {
+        &>.c-quick-sidebar-toggler {
+          &>.c-line {
+            transform: scale(1);
+            background:#ffffff !important;
+            transition:all .2s ease;
+          }
+        }
+        &:hover {
+          &>.c-quick-sidebar-toggler {
+            &>.c-line {
+              transform: scale(1.3,1);
+              background: #ffffff !important;
+            }
+          }
+        }
+      }
+  }
   }
 }
 @media screen and (min-width:992px){
@@ -286,4 +330,13 @@
       margin-bottom:59px;
     }
   }
+}
+#serviceswedo {
+  .simple-icon {
+    font-size:37px;
+  }
+}
+.c-theme-bg-parent-hover:hover .c-theme-bg-on-parent-hover {
+  background-color:#64b2fb !important;
+  color:white;
 }
