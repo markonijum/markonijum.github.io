@@ -38,6 +38,38 @@ canvas {
   color: #ffffff !important;
 }
 
+.c-img-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.c-img-cover--left {
+  background-position: left top;
+  height: auto;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .c-img-cover--left {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .c-img-cover--left {
+    height: auto;
+  }
+}
+
+.c-img-cover--right {
+  background-position: right top;
+}
+
+.c-card__ul {
+  color: white;
+  margin-top: 20px;
+  padding: 0;
+}
+
 @media screen and (min-width: 992px) {
   .white-fixed-menu .c-layout-header-7
 .c-navbar
@@ -397,6 +429,16 @@ li.c-active
 @media screen and (min-width: 992px) {
   .blog-sidebar .search-form .input-group {
     margin-top: 0;
+  }
+}
+
+.c-content-feature-8.c-opt-1 > .c-grid > li > .c-img {
+  padding: 128px 20px 129px 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .c-content-feature-8.c-opt-1 > .c-grid > li > .c-img {
+    padding: 128px 80px 129px 80px;
   }
 }
 /*# sourceMappingURL=greenFlamingo.css.map */
