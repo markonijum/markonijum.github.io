@@ -27,7 +27,22 @@
     color: white;
     margin-top: 20px;
     padding:0;
+    // list-style-type: none;
   }
+}
+#serviceswedo {
+  .c-content-line-icon.c-theme {
+    background-image: none;
+}
+  .float-helper {
+    height:110px;
+    @media screen and (min-width:992px) {
+      height:auto;
+    }
+  }
+}
+.c-theme-gr {
+  background-color: $baseGreenColor !important;
 }
 
 @media screen and (min-width: 992px) {
@@ -102,10 +117,10 @@
 .services-feature-background {
   background-color: #60b3f6 !important; 
 }
-.services-feature-background a {
-  border-color : white !important;
-  color : white !important;
-}
+// .services-feature-background a {
+//   border-color : white !important;
+//   color : white !important;
+// }
 /*Concept section*/
 .slightly-bold {
   font-weight: 500 !important;
@@ -144,7 +159,7 @@
       padding:15px;
       display: block;
       transform: scale(1,1);
-      border:1px solid #8cc63f;
+      border:1px solid #ffffff;
       transition: all .3s ease;
       &:hover {
         // border:1px solid #6fa12d;
@@ -293,7 +308,12 @@
     padding: 26px 17px 24px 15px;
     background: rgba(96, 179, 246, 0.8) !important;
   }
+  .c-page-on-scroll.c-layout-header-fixed .c-layout-header.green-menu .c-mega-menu .nav.navbar-nav > li > .c-quick-sidebar-toggler{
+    padding: 26px 17px 24px 15px;
+    background: $baseGreenColor !important;
+  }
 }
+
 
 .mobile-hidden {
   display: none !important;
@@ -381,3 +401,97 @@
     padding:128px 80px 129px 80px;
   }
 }
+.c-grid {
+  .c-card {
+    height: auto;
+    @media screen and (min-width:992px) {
+      height:424px;
+    }
+    @media screen and (min-width:1200px) {
+      height:356px;
+    }
+  }
+}
+
+.c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a {
+  background-color:#60b3f6;
+}
+.c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link:hover > a, .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.c-active > a, .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.active > a {
+  background:$baseBlueColorHover;
+}
+.c-content-line-icon.c-theme {
+  background-image: url(../images/content/line-icons/blue2.png);
+}
+
+// ***************************************************************
+// ******************* GREEN THEME********************************
+// ***************************************************************
+.green-theme {
+  .owl-carousel.c-theme .owl-controls .owl-dot.active {
+    background: $baseGreenColor;
+  }
+  .c-content-label {
+    background-color:$baseGreenColorDark;
+  }
+  .c-content-list-1.c-theme.c-separator-dot > li:before, .c-content-list-1.c-theme > li:before {
+    background-color:$baseGreenColor;
+  }
+  .c-theme-btn.btn {
+    background-color: #8cc63f;
+    border-color: #8cc63f;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+}
+.c-theme-btn.btn.btn-no-focus:hover, .c-theme-btn.btn:hover, .c-theme-btn.btn.btn-no-focus:active, .c-theme-btn.btn:active, .c-theme-btn.btn.active, .open > .c-theme-btn.btn.dropdown-toggle {
+  background-color: $baseGreenColorDark;
+  border-color: $baseGreenColorDark;
+}
+.c-theme-border {
+  border-color: #8cc63f !important;
+}
+.c-theme-font, .c-theme-color {
+  color: $baseGreenColor !important;
+}
+.bg-green {
+  background-color: $baseGreenColorDarker;
+}
+.c-layout-breadcrumbs-1 {
+  background: $baseGrayColor;
+}
+.c-layout-breadcrumbs-1 .c-page-title h3 {
+  color: #ffffff;
+}
+.c-layout-breadcrumbs-1 .c-page-breadcrumbs > li, .c-layout-breadcrumbs-1 .c-page-breadcrumbs > li > a {
+  color:#ffffff;
+}
+.cbp-l-filters-button .cbp-filter-counter, .cbp-l-filters-buttonCenter .cbp-filter-counter {
+  background-color: $baseGreenColor;
+}
+.cbp-l-filters-buttonCenter .cbp-filter-counter:after {
+  border-top: 4px solid $baseGreenColor;
+}
+.c-theme-ul-bg > li {
+  color: #ffffff;
+  background: $baseGreenColor !important;
+}
+.c-content-pagination.c-theme > li:hover > a {
+  border-color: $baseGreenColorDark;
+    background: $baseGreenColorDark;
+    color: #fff;
+}
+.c-content-pagination.c-theme > li.c-active > span, .c-content-pagination.c-theme > li.c-active > a {
+  border-color: $baseGreenColorDark;
+    background: $baseGreenColorDark;
+    color: #fff;
+}
+.c-content-tab-1.c-theme .nav > li:hover > a, .c-content-tab-1.c-theme .nav > li:focus > a, .c-content-tab-1.c-theme .nav > li:active > a, .c-content-tab-1.c-theme .nav > li.active > a, .c-content-tab-1.c-theme .nav.nav-justified > li:hover > a, .c-content-tab-1.c-theme .nav.nav-justified > li:focus > a, .c-content-tab-1.c-theme .nav.nav-justified > li:active > a, .c-content-tab-1.c-theme .nav.nav-justified > li.active > a {
+  border-bottom-color: $baseGreenColorDark;
+}
+.c-content-ver-nav .c-menu.c-theme > li:before {
+  background: $baseGreenColorDark;
+}
+.c-theme-bg {
+  background-color: $baseGreenColor !important;
+}
+}
+// **************************************************************************************************
