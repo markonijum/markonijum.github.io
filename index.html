@@ -266,11 +266,14 @@ function handleComplete(evt,comp) {
 	<!-- BEGIN: PAGE CONTAINER -->
 	<div class="c-layout-page">
 		<!-- BEGIN: PAGE CONTENT -->
-		<div style="background-color:#60b3f7; margin-top:65px" class="desktop-hidden">
+		<div style="background-color:#60b3f7; margin-top:65px;position: relative;" class="desktop-hidden">
 			<img style="width:100%" src="images/flamingoAnimPic.png" alt="">
+			<div class="video-wrapper">
+					<button class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square" data-toggle="modal" data-target=".bs-example-modal-lg">Watch Video</button>
+			</div>
 		</div>
 		<!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-15 -->
-		<section class="c-layout-revo-slider c-layout-revo-slider-15 mobile-hidden" dir="ltr">
+		<section style="overflow:hidden;height:100vh;" class="c-layout-revo-slider c-layout-revo-slider-15 mobile-hidden" dir="ltr">
 			<div class="tp-banner-container c-theme">
 				<div class="tp-banner rev_slider" data-version="5.0">
 					<ul>
@@ -303,14 +306,14 @@ function handleComplete(evt,comp) {
 							</div>
 
 							<!-- LAYER NR. 3 -->
-							<!-- <div class="tp-caption tp-resizeme" data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
-					                   {"delay": "wait", "speed": 300, "to": "opacity: 0"}]' data-type="image" data-x="center" data-y="bottom"
-							  data-hoffset="0" data-voffset="['-10', '-10','-10','-5']" data-width="['auto', 'auto', '778', '480']" data-height="['auto', 'auto', 'auto', 'auto']"
-							  data-transform_in="x:0;y:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-							  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="800"
-							  data-responsive_offset="on" data-basealign="slide">
-								<img class="c-slider-15-skyline" src="assets/images/layout/sliders/revo-slider/slider-15/skyline.png" alt="">
-							</div> -->
+							<div class="tp-caption tp-resizeme rs-parallaxlevel-10" data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
+							{"delay": "wait", "speed": 300, "to": "opacity: 0"}]' data-type="image" data-x="['center','center','right','right']"
+				   data-y="center" data-hoffset="['0'. '370','10','10']" data-voffset="['150','-150','-150','-100']" data-width="['auto']"
+				   data-height="['auto']" data-transform_in="x:[-100%];y:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+				   data-transform_out="x:[100%];y:[-100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+				   data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1500" data-basealign="slide">
+								<button class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square" data-toggle="modal" data-target=".bs-example-modal-lg">Watch Video</button>
+							</div>
 						</li>
 						<!--END -->
 					</ul>
@@ -330,7 +333,7 @@ function handleComplete(evt,comp) {
 					<div class="c-content-title-1" data-height="height">
 						<h3 class="c-font-uppercase c-font-bold">Meet Green Flamingo</h3>
 						<p class="c-font-uppercase c-font-sbold">
-							Green Flamingo is an IT Business Solutions company that plans and executes projects to construct or revitalise brands and how they are presented online.  
+							Green Flamingo is an IT business solutions company that designs and carries out projects to help brands reach their desired positioning in the virtual market 
 						</p>
 						<a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-md c-btn-border-2x c-btn-square c-theme-btn c-btn-uppercase c-btn-bold white-text">More</a>
 					</div>
@@ -469,7 +472,7 @@ function handleComplete(evt,comp) {
 											</div>
 											<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 												<div class="panel-body c-font-18">
-													Creating visual communication between the brand and its desired target market, aiming to establish loyalty in a structured way throughout all sectors. Maintaining unique and evocative branding of your company formulates visual personality and builds towards a full-rounded brand. The foundation of the visual communication is the consistency conducted through online and offline outreach campaigns.
+													Ongoing visual communication between a brand and its client base establishes loyalty in a structured way. It is a main tool for companies to express unique and evocative elements of their brands or services, attracting customers and helping them express their own individuality. One of the fundamental drives of Green Flamingo is to help companies communicate their brand, achieving greater brand recognition and better market positioning.
 												</div>
 											</div>
 										</div>
@@ -484,7 +487,7 @@ function handleComplete(evt,comp) {
 											</div>
 											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 												<div class="panel-body c-font-18">
-													Base for building an effective strategy is hidden in the uniqueness of the client’s strength related to its’ customer profile. We focus on maximising company’s potential and capturing the attention of the target market by implementing our set of solutions making your goals our priority. Our approach to each client is tailored and highly targeted. Hence, monitoring of results represents a very important element that provides basis for continuous improvement, making our collaborative work a learning curve.
+													The key to building an effective marketing strategy is different for every business. It involves realizing and maximizing a company’s unique advantages over its competitors. Green Flamingo tailors each approach to the client, identifying potential targets in terms of demographics, the best advertising media and mediums, and the ideal promotional materials based on individual customer segments. 
 												</div>
 											</div>
 										</div>
@@ -499,7 +502,7 @@ function handleComplete(evt,comp) {
 											</div>
 											<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 												<div class="panel-body c-font-18">
-													Providing adequate technical development of scalable solutions with a strong baseline from the start, having in mind client’s future needs as well. Respective organized timeline, and frequent and clear communication are crucial towards realizing the potential of collaboration. Requirements identification is the starting point which results in obtaining beforehand agreed expectations and avoiding re-work.
+													Good code is built for the present; Great code is built for the future. Green Flamingo provides the technical development of scalable web and mobile software with a strong starting baseline and growth potential. Whether you are establishing or reestablishing your position in the virtual market, we develop tailored features designed to meet the needs of a growing business. 
 												</div>
 											</div>
 										</div>
@@ -520,8 +523,8 @@ function handleComplete(evt,comp) {
 			<div class="row">
 				<div class="col-md-7">
 					<div class="c-content-title-1">
-						<h3 class="c-font-uppercase c-font-bold">Anything worth doing, is worth doing right.</h3>
-						<p class="c-font-uppercase" style="color:white;">Learn more about Green Flamingo practices</p>
+						<h3 class="c-font-uppercase c-font-bold">How we do it is what makes us special.</h3>
+						<p class="c-font-uppercase" style="color:white;">Find out what Green Flamingo can do for you</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-md-offset-2">
@@ -547,7 +550,7 @@ function handleComplete(evt,comp) {
 					<div class="c-card c-font-right c-bg-opacity-1">
 						<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Why Us</h3>
 						<p class="c-font-white c-font-18">
-							For enterprises, fresh or established, who are looking to develop or improve their competitiveness in the virtual market our IT and design services provide advanced, tailored and strategic solutions. 
+							For enterprises, fresh or established, that are looking to develop or improve their competitiveness in the virtual market our IT and design services provide advanced, tailored and strategic solutions. 
 						</p>
 					</div>
 				</li>
@@ -586,32 +589,6 @@ function handleComplete(evt,comp) {
 						<img class="flamingo flamingo--green wow animate fadeInRight" src="images/greenflamingo.png" alt="">
 					</div>
 				</li>
-				<!-- <li>
-					<div dir="rtl" class="c-card c-img c-img-cover c-img-cover--left c-bg-img-center" style="background-image: url(assets/images/content/.jpg)">
-							
-						<h3 class="c-font-white c-font-right">TRADITIONAL CHALLENGES</h3>
-						<ul class="c-card__ul c-font-right">
-							<li>Managing expectations and outcomes</li>
-							<li> Avoiding cost and time run-offs</li>
-							<li>Getting it right the first time</li>
-							<li>Avoiding quality trade offs</li>
-						</ul>
-					</div>
-				</li> -->
-				<!-- <li>
-					<div class="c-card c-img c-img-cover c-img-cover--right c-bg-img-center" style="background-image: url(images/greenflamingo.png); padding-bottom:65px">
-						<h3 class="c-font-white c-font-left">GREEN FLAMINGO SOLUTIONS</h3>
-						<ul class="c-card__ul">
-							<li>Predefine outcomes, budget and timeline</li>
-							<li>Set clear responsibility structure</li>
-							<li>Invest in quality planning </li>
-							<li>Proactively manage risk</li>
-							<li>Tailor service to each client individually </li>
-							<li>Foster open communication</li>
-							<li>Listen to the voice of the customer</li>
-						</ul>
-					</div>
-				</li> -->
 			</ul>
 		</div>
 	</div>
@@ -639,7 +616,7 @@ function handleComplete(evt,comp) {
 			<div class="col-md-4 col-sm-6 wow animate fadeInLeft">
 				<div class="c-content-step-1 c-opt-1">
 					<div class="c-icon"><span class="c-hr c-hr-first"><span class="c-content-line-icon c-icon-23 c-theme"></span></span></div>
-					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Build</div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">To Build?</div>
 					<div class="c-description c-font-17">
 						Create your digital presence and company brand from scratch
 					</div>
@@ -649,9 +626,9 @@ function handleComplete(evt,comp) {
 			<div class="col-md-4 col-sm-6 wow animate fadeInLeft" data-wow-delay="0.2s">
 				<div class="c-content-step-1 c-opt-1">
 					<div class="c-icon"><span class="c-hr"><span class="c-content-line-icon c-icon-33 c-theme"></span></span></div>
-					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Boost</div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">To Boost?</div>
 					<div class="c-description c-font-17">
-						Take your company to the next level, by upgrading your current assets
+						Take your company to the next level, by upgrading your online profile
 					</div>
 					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
 				</div>
@@ -659,9 +636,9 @@ function handleComplete(evt,comp) {
 			<div class="col-md-4 col-sm-12 wow animate fadeInLeft" data-wow-delay="0.4s">
 				<div class="c-content-step-1 c-opt-1">
 					<div class="c-icon"><span class="c-hr c-hr-last"><span class="c-content-line-icon c-icon-1 c-theme"></span></span></div>
-					<div class="c-title c-font-20 c-font-bold c-font-uppercase">Maintain</div>
+					<div class="c-title c-font-20 c-font-bold c-font-uppercase">To Maintain?</div>
 					<div class="c-description c-font-17">
-						Invest your trust in us to effectively manage your current assets
+						Invest your trust in us to innovatively manage your website and social media
 					</div>
 					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
 				</div>
@@ -1125,7 +1102,15 @@ function handleComplete(evt,comp) {
 		</div>
 	</footer>
 	<!-- END: LAYOUT/FOOTERS/FOOTER-2 -->
-
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+					<div class="embed-responsive embed-responsive-16by9">
+						<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4GK1NDTWbkY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+						<!-- <iframe src="https://player.vimeo.com/video/290120770?color=ffffff&title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+						<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/73573198?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+			</div>		
+	</div>
 	<!-- BEGIN: LAYOUT/FOOTERS/GO2TOP -->
 	<div class="c-layout-go2top">
 		<i class="icon-arrow-up"></i>
