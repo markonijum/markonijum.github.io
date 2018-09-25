@@ -541,7 +541,7 @@ li.c-active
 }
 
 .c-content-line-icon.c-theme {
-  background-image: url(../images/content/line-icons/blue2.png);
+  background-image: url(../images/content/line-icons/green3.png);
 }
 
 .green-theme .owl-carousel.c-theme .owl-controls .owl-dot.active {
@@ -627,6 +627,36 @@ li.c-active
 
 .green-theme .c-theme-bg {
   background-color: #8cc63f !important;
+}
+
+.green-theme .c-theme-bg-parent-hover:hover .c-theme-bg-on-parent-hover {
+  background-color: #39B54A !important;
+  color: white;
+}
+
+.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a {
+  background-color: #8cc63f;
+}
+
+.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed {
+  background-color: #ffffff;
+}
+
+.green-theme .c-content-accordion-1.c-theme .panel > .panel-collapse > .panel-body {
+  background-color: #8cc63f !important;
+  color: white !important;
+}
+
+.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:hover, .green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:focus {
+  background-color: #8cc63f !important;
+}
+
+.green-theme .first-section-right-background {
+  background-color: #353b3e;
+}
+
+.green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link:hover > a, .green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.c-active > a, .green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.active > a {
+  background: #39B54A;
 }
 
 .video-wrapper {

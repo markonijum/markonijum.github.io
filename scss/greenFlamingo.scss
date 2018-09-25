@@ -469,7 +469,7 @@
   background:$baseBlueColorHover;
 }
 .c-content-line-icon.c-theme {
-  background-image: url(../images/content/line-icons/blue2.png);
+  background-image: url(../images/content/line-icons/green3.png);
 }
 
 // ***************************************************************
@@ -541,6 +541,29 @@
 }
 .c-theme-bg {
   background-color: $baseGreenColor !important;
+}
+.c-theme-bg-parent-hover:hover .c-theme-bg-on-parent-hover {
+  background-color: $baseGreenColorDark !important;
+  color: white;
+}
+.c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a {
+  background-color:$baseGreenColor;
+}
+.c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed {
+  background-color: #ffffff;
+}
+.c-content-accordion-1.c-theme .panel > .panel-collapse > .panel-body {
+  background-color: $baseGreenColor !important;
+  color:white !important;
+}
+.c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:hover, .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:focus {
+  background-color: $baseGreenColor !important;
+}
+.first-section-right-background {
+  background-color:$baseGrayColor;
+}
+.c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link:hover > a, .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.c-active > a, .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.active > a {
+  background: $baseGreenColorDark;
 }
 }
 // **************************************************************************************************
