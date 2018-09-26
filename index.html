@@ -158,11 +158,11 @@ function handleComplete(evt,comp) {
 	</script>		
 </head>
 
-<body class="green-theme c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
+<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
 
 	<!-- BEGIN: LAYOUT/HEADERS/HEADER-3 -->
 	<!-- BEGIN: HEADER -->
-	<header id="home" class="green-menu c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark" data-minimize-offset="80">
+	<header id="home" class="c-layout-header c-layout-header-7 c-layout-header-dark-mobile c-header-transparent-dark" data-minimize-offset="80">
 		<div class="c-navbar">
 			<div class="container-fluid">
 				<!-- BEGIN: BRAND -->
@@ -219,10 +219,10 @@ function handleComplete(evt,comp) {
 								<a href="#portfolio" class="c-link tooltips" data-placement="left" data-trigger="hover" data-original-title="Portfolio">
 								</a>
 							</li>
-											<!-- <li class="c-onepage-link">
+											<li class="c-onepage-link">
 								<a href="#recentblogs" class="c-link tooltips" data-placement="left" data-trigger="hover" data-original-title="Blog">
 								</a>
-							</li> -->
+							</li>
 								</ul>
 					</nav>
 					<!-- END: MEGA MENU -->
@@ -266,10 +266,12 @@ function handleComplete(evt,comp) {
 	<!-- BEGIN: PAGE CONTAINER -->
 	<div class="c-layout-page">
 		<!-- BEGIN: PAGE CONTENT -->
-		<div style="background-color:#60b3f7; margin-top:65px;position: relative;" class="desktop-hidden">
-			<img style="width:100%" src="images/flamingoAnimPic.png" alt="">
+		<div class="mob-brand-section desktop-hidden">
+			<img class="mob-img-bg" style="width:100%" src="assets/images/temp/mobilebg.png" alt="">
 			<div class="video-wrapper">
-					<button class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square" data-toggle="modal" data-target=".bs-example-modal-lg">Watch Video</button>
+				<!-- <h2 data-wow-delay="0.3s" class="brand-title c-font-uppercase wow animate bounceInRight">Imagine it. Tell it</h2> -->
+				<h2 style="margin-bottom:27px" class="brand-title c-font-uppercase"><span data-wow-delay="0.3s" class="wow animate rubberBand">I</span><span data-wow-delay="0.4s" class="wow animate rubberBand">m</span><span data-wow-delay="0.5s" class="wow animate rubberBand">a</span><span data-wow-delay="0.6s" class="wow animate rubberBand">g</span><span data-wow-delay="0.7s" class="wow animate rubberBand">i</span><span data-wow-delay="0.8s" class="wow animate rubberBand">n</span><span data-wow-delay="0.9s" class="wow animate rubberBand">e</span> <span data-wow-delay="1s" class="wow animate rubberBand">I</span><span data-wow-delay="1.1s" class="wow animate rubberBand">t</span><span data-wow-delay="1.2s" class="wow animate rubberBand">.</span> <span class="wow animate rubberBand" data-wow-delay="1.3s">T</span><span data-wow-delay="1.4s" class="wow animate rubberBand">e</span><span data-wow-delay="1.5s" class="wow animate rubberBand">l</span><span data-wow-delay="1.6s" class="wow animate rubberBand">l</span> <span data-wow-delay="1.7s" class="wow animate rubberBand">i</span><span data-wow-delay="1.8s" class="wow animate rubberBand">t</span><span data-wow-delay="1.9s" class="wow animate rubberBand">.</span></h2>
+				<button data-wow-delay="2.5s" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square wow animate wobble" data-toggle="modal" data-target=".bs-example-modal-lg">Watch Video</button>
 			</div>
 		</div>
 		<!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-15 -->
@@ -335,7 +337,7 @@ function handleComplete(evt,comp) {
 						<p class="c-font-uppercase c-font-sbold">
 							Green Flamingo is an IT business solutions company that designs and carries out projects to help brands reach their desired positioning in the virtual market 
 						</p>
-						<a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-md c-btn-border-2x c-btn-square c-theme-btn c-btn-uppercase c-btn-bold white-text">More</a>
+						<a href="/aboutus.html" class="btn btn-md c-btn-border-2x c-btn-square c-theme-btn c-btn-uppercase c-btn-bold white-text">More</a>
 					</div>
 					<!-- End-->
 				</div>
@@ -415,7 +417,7 @@ function handleComplete(evt,comp) {
 										We cover a variety of services, completely tailored to your business needs, 
 										reflecting your vision for your brand.
 									</h3>
-									<a href="http://themeforest.net/item/jango-responsive-multipurpose-html5-template/11987314" class="btn btn-xs c-btn-border-2x c-btn-square c-btn-white c-btn-uppercase c-btn-bold">Explore</a>
+									<a href="/services.html" class="btn btn-xs c-btn-border-2x c-btn-square c-btn-white c-btn-uppercase c-btn-bold">Explore</a>
 								</div>
 							</div>
 						</div>
@@ -450,7 +452,7 @@ function handleComplete(evt,comp) {
 											<br/>CONCEPT</h3>
 										<div class="c-line-left c-bg-blue-3 c-theme-bg"></div>
 									</div>
-									<div style="background-color:#60b3f7 !important;" class="c-text wow animate fadeInLeft concept-box-left slightly-bold">
+									<div class="c-text wow animate fadeInLeft concept-box-left slightly-bold">
 										With right ingredients, the recipe never fails. 
 									</div>
 									<a href="aboutus.html" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn wow animate fadeIn concept-btn">Explore</a>
@@ -531,7 +533,7 @@ function handleComplete(evt,comp) {
 					<div class="c-content-v-center" style="height: 90px;">
 						<div class="c-wrapper">
 							<div class="c-body">
-								<button type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Services</button>
+								<a href="/services.html" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Services</a>
 							</div>
 						</div>
 					</div>					
@@ -548,7 +550,7 @@ function handleComplete(evt,comp) {
 			<ul class="c-grid">
 				<li>
 					<div class="c-card c-font-right c-bg-opacity-1">
-						<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">Why Us</h3>
+						<h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">What do we do</h3>
 						<p class="c-font-white c-font-18">
 							For enterprises, fresh or established, that are looking to develop or improve their competitiveness in the virtual market our IT and design services provide advanced, tailored and strategic solutions. 
 						</p>
@@ -620,7 +622,7 @@ function handleComplete(evt,comp) {
 					<div class="c-description c-font-17">
 						Create your digital presence and company brand from scratch
 					</div>
-					<button class="btn c-btn-square c-theme-btn c-btn-border1-2x c-btn-uppercase c-btn-bold">EXPLORE</button>
+					<a href="/services.html" class="btn c-btn-square c-theme-btn c-btn-border1-2x c-btn-uppercase c-btn-bold">EXPLORE</a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 wow animate fadeInLeft" data-wow-delay="0.2s">
@@ -630,7 +632,7 @@ function handleComplete(evt,comp) {
 					<div class="c-description c-font-17">
 						Take your company to the next level, by upgrading your online profile
 					</div>
-					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
+					<a href="/services.html" class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-12 wow animate fadeInLeft" data-wow-delay="0.4s">
@@ -640,7 +642,7 @@ function handleComplete(evt,comp) {
 					<div class="c-description c-font-17">
 						Invest your trust in us to innovatively manage your website and social media
 					</div>
-					<button class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</button>
+					<a href="/services.html" class="btn c-btn-square c-theme-btn c-btn-uppercase c-btn-bold">EXPLORE</a>
 				</div>
 			</div>
 		</div>
@@ -651,13 +653,13 @@ function handleComplete(evt,comp) {
 <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(../../assets/images/temp/home_contact_b.png)">
 	<div class="container">
 		<div class="c-content-feature-3-grid">
-			<h3 class="c-title c-font-uppercase c-font-bold">How to get started <br/>with us</h3>
+			<h3 class="c-title c-font-uppercase c-font-bold">How to get started</h3>
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="c-content-feature-3">
 						
 						<p>Tell us a bit about YOU and YOUR vision by answering a few short questions, and Green Flamingo's proposal will be in your inbox in 24hours</p>
-						<button type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Start</button>
+						<a href="/contact.html" type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Start</a>
 					</div>
 				</div>
 				<div class="col-sm-4" >
@@ -668,7 +670,7 @@ function handleComplete(evt,comp) {
 				<div class="col-sm-4">
 					<div class="c-content-feature-3">
 						<p>If you would like to find out more about our services, our team or how the flamingo became green, send us your questions, or schedule a live session</p>
-						<button type="button" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Contact</button>
+						<a href="/contact.html" class="btn btn-md c-btn-border-2x c-btn-white c-btn-uppercase c-btn-bold c-btn-square">Contact</a>
 					</div>
 				</div>
 			</div>
@@ -1004,7 +1006,7 @@ function handleComplete(evt,comp) {
 				<div class="row">
 					<div class="col-md-6 col-sm-6">
 						<p class="c-copyright c-font-oswald c-font-14">
-							Copyright &copy; JANGO Inc.
+							Copyright &copy; Green Flamingo
 						</p>
 					</div>
 					<div class="col-md-6 col-sm-6">
@@ -1039,9 +1041,7 @@ function handleComplete(evt,comp) {
 	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 					<div class="embed-responsive embed-responsive-16by9">
-						<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4GK1NDTWbkY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-						<!-- <iframe src="https://player.vimeo.com/video/290120770?color=ffffff&title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-						<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/73573198?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/291957070" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</div>
 			</div>		
 	</div>

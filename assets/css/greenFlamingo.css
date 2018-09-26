@@ -541,7 +541,7 @@ li.c-active
 }
 
 .c-content-line-icon.c-theme {
-  background-image: url(../images/content/line-icons/green3.png);
+  background-image: url(../images/content/line-icons/blue2.png);
 }
 
 .green-theme .owl-carousel.c-theme .owl-controls .owl-dot.active {
@@ -629,36 +629,6 @@ li.c-active
   background-color: #8cc63f !important;
 }
 
-.green-theme .c-theme-bg-parent-hover:hover .c-theme-bg-on-parent-hover {
-  background-color: #39B54A !important;
-  color: white;
-}
-
-.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a {
-  background-color: #8cc63f;
-}
-
-.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed {
-  background-color: #ffffff;
-}
-
-.green-theme .c-content-accordion-1.c-theme .panel > .panel-collapse > .panel-body {
-  background-color: #8cc63f !important;
-  color: white !important;
-}
-
-.green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:hover, .green-theme .c-content-accordion-1.c-theme .panel > .panel-heading > .panel-title > a.collapsed:focus {
-  background-color: #8cc63f !important;
-}
-
-.green-theme .first-section-right-background {
-  background-color: #353b3e;
-}
-
-.green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link:hover > a, .green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.c-active > a, .green-theme .c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link.active > a {
-  background: #39B54A;
-}
-
 .video-wrapper {
   width: 100%;
 }
@@ -697,6 +667,61 @@ li.c-active
 @media screen and (min-width: 500px) {
   .c-content-feature-8 > .c-grid {
     display: table;
+  }
+}
+
+.mob-brand-section {
+  position: relative;
+  height: 400px;
+}
+
+.mob-brand-section .c-btn-uppercase.btn-md {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 400px) {
+  .mob-brand-section .c-btn-uppercase.btn-md {
+    font-size: 16px;
+  }
+}
+
+.mob-brand-section .mob-img-bg {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 400px;
+}
+
+.mob-brand-section .video-wrapper {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.mob-brand-section .brand-title {
+  font-size: 24px;
+  letter-spacing: .9px;
+  color: white;
+}
+
+.mob-brand-section .brand-title span {
+  display: inline-block;
+}
+
+@media screen and (min-width: 350px) {
+  .mob-brand-section .brand-title {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .mob-brand-section .brand-title {
+    font-size: 44px;
   }
 }
 /*# sourceMappingURL=greenFlamingo.css.map */
